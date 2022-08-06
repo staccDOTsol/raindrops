@@ -4,7 +4,11 @@
   "private": true,
   "license": "ISC",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "@raindrop-studios/sol-kit": "^0.1.79",
+    "@solana/spl-token": "^0.2.0",
+    "@solana/web3.js": "1.31.0"
+  },
   "devDependencies": {
     "@metaplex-foundation/amman": "^0.10.0"
   }

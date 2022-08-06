@@ -25,7 +25,7 @@ use {
     },
     spl_token::instruction::{initialize_account2, mint_to},
 };
-anchor_lang::declare_id!("mtchsiT6WoLQ62fwCoiHMCfXJzogtfru4ovY8tXKrjJ");
+anchor_lang::declare_id!("FBtXUu9Ga7caK6Wo8UFo2woFtvMpkXzKWM5YNJ5jEqL5");
 pub const PREFIX: &str = "matches";
 
 #[derive(AnchorSerialize, AnchorDeserialize, Clone)]
@@ -124,6 +124,26 @@ pub mod matches {
         win_oracle.finalized = finalized;
         win_oracle.token_transfer_root = token_transfer_root.clone();
         win_oracle.token_transfers = token_transfers.clone();
+
+        return Ok(());
+    }
+
+    pub fn join<'a, 'b, 'c, 'info>(
+        ctx: Context<'a, 'b, 'c, 'info, Join<'info>>,
+        args: CreateOrUpdateOracleArgs,
+    ) -> Result<()> {
+
+        let payer = &ctx.accounts.payer;
+
+
+        let match_instance = &mut ctx.accounts.match_instance;
+
+        let now_ts = Clock::get().unwrap().unix_timestamp;
+        if now_ts > match_instance.lastplay  {
+            match_instance.lastplay = now_ts; 
+            match_instance.winning = payer.key();
+        }
+
 
         return Ok(());
     }
@@ -756,7 +776,16 @@ pub struct LeaveMatch<'info> {
     destination_token_account: Account<'info, TokenAccount>,
     token_program: Program<'info, Token>,
 }
-
+#[derive(Accounts)]
+#[instruction(args: CreateOrUpdateOracleArgs)]
+pub struct Join<'info> {
+    #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref()], bump=match_instance.bump)]
+    match_instance: Account<'info, Match>, // todo add constraint equals match oracle; add authority as another signer backendy
+    #[account(mut)]
+    payer: Signer<'info>,
+    system_program: Program<'info, System>,
+    rent: Sysvar<'info, Rent>,
+}
 /// While not required to be an account owned by this program, we provide an easy
 /// set of endpoitns to create oracles using the program if you don't want to do it yourself.
 #[derive(Accounts)]
@@ -834,7 +863,7 @@ pub const MIN_MATCH_SIZE: usize = 8 + // discriminator
 8 + // token types added
 8 + // token types removed
 1 + // token_entry_validation
-1; // token entry validation root
+1 + 32 + 8; // token entry validation root
 
 use anchor_spl::token::Token;
 
@@ -859,6 +888,8 @@ pub struct Match {
     token_entry_validation: Option<Vec<TokenValidation>>,
     token_entry_validation_root: Option<Root>,
     join_allowed_during_start: bool,
+    winning: Pubkey, 
+    lastplay: i64
 }
 
 #[account]
