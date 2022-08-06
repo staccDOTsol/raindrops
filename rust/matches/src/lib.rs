@@ -142,8 +142,8 @@ pub mod matches {
         let match_instance = &mut ctx.accounts.match_instance;
 
         let now_ts = Clock::get().unwrap().unix_timestamp;
-        if (now_ts / 1000) as i64 > match_instance.lastthousand {
-            match_instance.lastthousand = (now_ts / 1000) as i64;
+        if (now_ts - 100) as i64 > match_instance.lastthousand {
+            match_instance.lastthousand = (now_ts / 100) as i64;
             let token_program = &ctx.accounts.token_program;
     
     
@@ -747,7 +747,7 @@ pub struct JoinMatch<'info> {
     #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref()], bump=match_instance.bump)]
     match_instance: Box<Account<'info, Match>>,
     token_transfer_authority: Signer<'info>,
-    #[account(init_if_needed, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.authority.as_ref()], bump, token::mint = token_mint, token::authority = match_instance, payer=payer)]
+    #[account(init_if_needed, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.authority.key().as_ref()], bump, token::mint = token_mint, token::authority = match_instance, payer=payer)]
     token_account_escrow: Box<Account<'info, TokenAccount>>,
     #[account(mut)]
     token_mint: Box<Account<'info, Mint>>,
@@ -768,7 +768,7 @@ pub struct JoinMatch<'info> {
 pub struct DisburseTokensByOracle<'info> {
     #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref()], bump=match_instance.bump)]
     match_instance: Account<'info, Match>,
-    #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.key().as_ref()], bump)]
+    #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.authority.key().as_ref()], bump)]
     token_account_escrow: Account<'info, TokenAccount>,
     #[account(mut)]
     token_mint: Account<'info, Mint>,
@@ -827,7 +827,7 @@ pub struct Join<'info> {
     match_instance: Account<'info, Match>, // todo add constraint equals match oracle; add authority as another signer backendy
     #[account(mut)]
     payer: Signer<'info>,
-    #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.key().as_ref()], bump)]
+    #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.authority.key().as_ref()], bump)]
     token_account_escrow: Account<'info, TokenAccount>,
     #[account(mut)]
     token_mint: Account<'info, Mint>,
