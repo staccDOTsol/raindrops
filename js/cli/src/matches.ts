@@ -609,7 +609,7 @@ programCommand("show_match")
       "winningnow:",
       u.winning.toBase58())
       log.info(
-        "lastthousand:",
+        "win at:",
         u.lastthousand.toNumber())
     log.info('seconds from lastplay til next winna can be chosen',
     u.lastthousand.toNumber() -  u.lastplay.toNumber())
