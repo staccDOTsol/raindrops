@@ -1,3 +1,5 @@
+//  @ts-nocheck
+
 import { web3, AnchorProvider, BN, Address } from "@project-serum/anchor";
 import {
   AccountMeta,

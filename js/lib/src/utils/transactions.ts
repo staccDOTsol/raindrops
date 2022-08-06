@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Wallet } from "@project-serum/anchor/dist/cjs/provider";
 import {
   Blockhash,
@@ -156,27 +158,7 @@ export async function sendSignedTransaction({
     if (err.timeout) {
       throw new Error("Timed out awaiting confirmation on transaction");
     }
-    let simulateResult: SimulatedTransactionResponse | null = null;
-    try {
-      simulateResult = (
-        await simulateTransaction(connection, signedTransaction, "single")
-      ).value;
-    } catch (e) {
-      log.error("Simulate Transaction error", e);
-    }
-    if (simulateResult && simulateResult.err) {
-      if (simulateResult.logs) {
-        for (let i = simulateResult.logs.length - 1; i >= 0; --i) {
-          const line = simulateResult.logs[i];
-          if (line.startsWith("Program log: ")) {
-            throw new Error(
-              "Transaction failed: " + line.slice("Program log: ".length)
-            );
-          }
-        }
-      }
-      throw new Error(JSON.stringify(simulateResult.err));
-    }
+   
     log.error("Got this far.");
     // throw new Error('Transaction failed');
   } finally {
@@ -192,10 +174,8 @@ async function simulateTransaction(
   transaction: Transaction,
   commitment: Commitment
 ): Promise<RpcResponseAndContext<SimulatedTransactionResponse>> {
-  // @ts-ignore
-  transaction.recentBlockhash = await connection._recentBlockhash(
-    // @ts-ignore
-    connection._disableBlockhashCaching
+  transaction.recentBlockhash = await connection.getLatestBlockhash(
+
   );
 
   const signData = transaction.serializeMessage();

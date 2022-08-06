@@ -1,3 +1,5 @@
+//  @ts-nocheck
+
 import { AnchorProvider, BN, web3 } from "@project-serum/anchor";
 import {
   Program,

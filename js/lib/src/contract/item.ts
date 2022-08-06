@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { ObjectWrapper, Program, Transaction, SendOptions } from "@raindrop-studios/sol-kit";
 import { web3, BN, AnchorProvider, Wallet } from "@project-serum/anchor";
 import NodeWallet from "@project-serum/anchor/dist/cjs/nodewallet";

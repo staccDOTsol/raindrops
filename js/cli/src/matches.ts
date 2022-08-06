@@ -7,12 +7,12 @@ import { web3 } from "@project-serum/anchor";
 
 import {
  Wallet
-} from "@raindrop-studios/sol-command";
+} from "../../sol-command";
 import {
   getMatchesProgram,
   Utils,
   State
-} from "@raindrops-protocol/raindrops";
+} from "../../lib/src/main";
 
 const { loadWalletKey } = Wallet;
 const { PDA } = Utils
@@ -38,6 +38,7 @@ programCommand("create_match")
     const config = JSON.parse(configString);
 
     await anchorProgram.createMatch(
+      walletKeyPair,
       {
         winOracle: config.winOracle
           ? new web3.PublicKey(config.winOracle)
@@ -91,6 +92,7 @@ programCommand("update_match")
     const config = JSON.parse(configString);
 
     await anchorProgram.updateMatch(
+      walletKeyPair,
       {
         matchState: config.matchState || { draft: true },
         tokenEntryValidationRoot: null,
@@ -155,6 +157,7 @@ programCommand("join_match")
     for (let i = 0; i < indices.length; i++) {
       const setup = config.tokensToJoin[indices[i]];
       await anchorProgram.joinMatch(
+        walletKeyPair,
         {
           amount: new BN(setup.amount),
           tokenEntryValidation: null,
@@ -185,7 +188,7 @@ programCommand("join_match")
             setup.index != null && setup.index != undefined
               ? new BN(setup.index)
               : null,
-        }
+        },
       );
     }
   });
@@ -265,6 +268,7 @@ programCommand("update_match_from_oracle")
     const config = JSON.parse(configString);
 
     await anchorProgram.updateMatchFromOracle(
+      walletKeyPair,
       {},
       {
         winOracle: config.winOracle
@@ -403,7 +407,7 @@ programCommand("drain_oracle")
     );
   });
 
-programCommand("create_or_update_oracle")
+programCommand("join")
   .requiredOption(
     "-cp, --config-path <string>",
     "JSON file with match settings"
@@ -422,7 +426,7 @@ programCommand("create_or_update_oracle")
     //@ts-ignore
     const config = JSON.parse(configString);
 
-    await anchorProgram.createOrUpdateOracle({
+    await anchorProgram.join(walletKeyPair,{
       seed: config.oracleState.seed,
       authority: config.oracleState.authority
         ? new web3.PublicKey(config.oracleState.authority)
@@ -431,6 +435,18 @@ programCommand("create_or_update_oracle")
       tokenTransfers: config.oracleState.tokenTransfers,
       space: config.space ? new BN(config.space) : new BN(150),
       finalized: config.oracleState.finalized,
+      // @ts-ignore
+      winOracle: config.winOracle
+      ? new web3.PublicKey(config.winOracle)
+      : (
+          await PDA.getOracle(
+            new web3.PublicKey(config.oracleState.seed),
+
+            config.oracleState.authority
+              ? new web3.PublicKey(config.oracleState.authority)
+              : walletKeyPair.publicKey
+          )
+        )[0],
     });
   });
 
@@ -554,6 +570,13 @@ programCommand("show_match")
         ? u.tokenEntryValidationRoot.root.toBase58()
         : "Unset"
     );
+    log.info(
+      "lastplay:",
+      u.lastplay.toNumber())
+      
+    log.info(
+      "winningnow:",
+      u.winning.toBase58())
   });
 function programCommand(name: string) {
   return program

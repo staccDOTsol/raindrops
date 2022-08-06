@@ -13,7 +13,7 @@ export const PLAYER_ID = new web3.PublicKey(
 );
 
 export const MATCHES_ID = new web3.PublicKey(
-  "mtchsiT6WoLQ62fwCoiHMCfXJzogtfru4ovY8tXKrjJ"
+  "FBtXUu9Ga7caK6Wo8UFo2woFtvMpkXzKWM5YNJ5jEqL5"
 );
 
 export const STAKING_ID = new web3.PublicKey(

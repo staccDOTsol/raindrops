@@ -1,11 +1,14 @@
+
 import {
   web3,
   Program,
   BN,
   Provider,
-  AnchorProvider,
+  AnchorProvider,// @ts-ignore
+
 } from "@project-serum/anchor";
-import { SystemProgram } from "@solana/web3.js";
+import { Keypair, SystemProgram } from "@solana/web3.js";
+// @ts-ignore
 
 import NodeWallet from "@project-serum/anchor/dist/cjs/nodewallet";
 import { MATCHES_ID, TOKEN_PROGRAM_ID } from "../constants/programIds";
@@ -17,18 +20,21 @@ import {
   getOracle,
   getPlayerPDA,
 } from "../utils/pda";
-import { ObjectWrapper } from "./common";
+import { ObjectWrapper } from "./common";// @ts-ignore
+
 import log from "loglevel";
 import { getCluster } from "../utils/connection";
-import { sendTransactionWithRetry } from "../utils/transactions";
+import { sendTransactionWithRetry, sendTransactionWithRetryWithKeypair } from "../utils/transactions";
 import {
   AnchorMatchState,
   AnchorTokenDelta,
   AnchorTokenEntryValidation,
   TokenType,
-} from "../state/matches";
+} from "../state/matches";// @ts-ignore
+
 import { Token } from "@solana/spl-token";
 import { createAssociatedTokenAccountInstruction } from "../utils/ata";
+import { Key } from "readline";
 
 export function transformTokenValidations(args: {
   tokenEntryValidation: AnchorTokenEntryValidation[] | null;
@@ -196,6 +202,8 @@ export class MatchesInstruction {
   }
 
   async createMatch(
+
+    kp: Keypair,
     args: CreateMatchArgs,
     _accounts = {},
     _additionalArgs = {}
@@ -236,13 +244,16 @@ export class MatchesInstruction {
     let destinationTokenAccount = tfer.to;
     const info = await (
       this.program.provider as AnchorProvider
+      // @ts-ignore
     ).connection.getAccountInfo(destinationTokenAccount);
 
     const instructions = [];
 
+      // @ts-ignore
     if (!info.owner.equals(TOKEN_PROGRAM_ID)) {
       const destinationTokenOwner = destinationTokenAccount;
       destinationTokenAccount = (
+        // @ts-ignore
         await getAtaForMint(tfer.mint, destinationTokenAccount)
       )[0];
 
@@ -252,9 +263,11 @@ export class MatchesInstruction {
 
       if (!exists || exists.data.length == 0) {
         instructions.unshift(
+          // @ts-ignore
           createAssociatedTokenAccountInstruction(
             destinationTokenAccount,
             (this.program.provider as AnchorProvider).wallet.publicKey,
+            // @ts-ignore
             destinationTokenOwner,
             tfer.mint
           )
@@ -263,13 +276,16 @@ export class MatchesInstruction {
     }
 
     instructions.push(
+      // @ts-ignore
       await this.program.methods
+      // @ts-ignore
         .disburseTokensByOracle(args)
         .accounts({
           matchInstance: match,
           tokenAccountEscrow,
           tokenMint: tfer.mint,
           originalSender: tfer.from,
+          // @ts-ignore
           destinationTokenAccount,
           winOracle: accounts.winOracle,
           tokenProgram: TOKEN_PROGRAM_ID,
@@ -340,6 +356,7 @@ export class MatchesInstruction {
     };
   }
   async updateMatch(
+    kp: Keypair,
     args: UpdateMatchArgs,
     accounts: UpdateMatchAccounts,
     _additionalArgs = {}
@@ -350,7 +367,7 @@ export class MatchesInstruction {
     return {
       instructions: [
         await this.program.methods
-          .updateMatch(args)
+          .updateMatch(kp, args)
           .accounts({
             matchInstance: match,
             winOracle: accounts.winOracle,
@@ -402,6 +419,7 @@ export class MatchesInstruction {
   }
 
   async joinMatch(
+    kp: Keypair,
     args: JoinMatchArgs,
     accounts: JoinMatchAccounts,
     additionalArgs: JoinMatchAdditionalArgs
@@ -450,9 +468,11 @@ export class MatchesInstruction {
                 ? SystemProgram.programId
                 : additionalArgs.sourceType == TokenType.Item
                 ? (
+                  // @ts-ignore
                     await getItemPDA(accounts.tokenMint, additionalArgs.index)
                   )[0]
                 : (
+                  // @ts-ignore
                     await getPlayerPDA(accounts.tokenMint, additionalArgs.index)
                   )[0],
             payer: (this.program.provider as AnchorProvider).wallet.publicKey,
@@ -476,6 +496,7 @@ export class MatchesInstruction {
   }
 
   async updateMatchFromOracle(
+    kp: Keypair,
     args = {},
     accounts: UpdateMatchFromOracleAccounts,
     _additionalArgs = {}
@@ -485,13 +506,41 @@ export class MatchesInstruction {
     return {
       instructions: [
         await this.program.methods
-          .updateMatchFromOracle()
+          .updateMatchFromOracle(kp)
           .accounts({
             matchInstance: match,
             winOracle: accounts.winOracle,
             authority: (this.program.provider as AnchorProvider).wallet
               .publicKey,
             clock: web3.SYSVAR_CLOCK_PUBKEY,
+          })
+          .instruction(),
+      ],
+      signers: [],
+    };
+  }
+
+  async join(
+    args: CreateOrUpdateOracleArgs,
+    _accounts = {},
+    _additionalArgs = {}
+  ) {
+    // @ts-ignore
+    const matchInstance = (await getMatch(args.winOracle))[0];
+
+
+    return {
+      instructions: [
+        await this.program.methods
+          .join({
+            ...args,
+            seed: new web3.PublicKey(args.seed),
+          })
+          .accounts({
+            matchInstance,
+            payer: (this.program.provider as AnchorProvider).wallet.publicKey,
+            systemProgram: SystemProgram.programId,
+            rent: web3.SYSVAR_RENT_PUBKEY,
           })
           .instruction(),
       ],
@@ -575,27 +624,30 @@ export class MatchesProgram {
     const oracleInstance =
       await this.program.account.winOracle.coder.accounts.decode(
         "WinOracle",
+        // @ts-ignore
         oracleAcct.data
       );
 
     return new MatchWrapper({
       program: this,
       key: oracle,
+      // @ts-ignore
       data: oracleAcct.data,
       object: oracleInstance,
     });
   }
 
   async createMatch(
+    kp: Keypair,
     args: CreateMatchArgs,
     _accounts = {},
     additionalArgs: CreateMatchAdditionalArgs
   ) {
-    const { instructions, signers } = await this.instruction.createMatch(args);
+    const { instructions, signers } = await this.instruction.createMatch(kp,args);
 
-    await sendTransactionWithRetry(
+    await sendTransactionWithRetryWithKeypair(
       (this.program.provider as AnchorProvider).connection,
-      (this.program.provider as AnchorProvider).wallet,
+      kp,
       instructions,
       signers
     );
@@ -659,19 +711,21 @@ export class MatchesProgram {
   }
 
   async joinMatch(
+    kp: Keypair,
     args: JoinMatchArgs,
     accounts: JoinMatchAccounts,
     additionalArgs: JoinMatchAdditionalArgs
   ) {
     const { instructions, signers } = await this.instruction.joinMatch(
+      kp,
       args,
       accounts,
       additionalArgs
     );
 
-    await sendTransactionWithRetry(
+    await sendTransactionWithRetryWithKeypair(
       (this.program.provider as AnchorProvider).connection,
-      (this.program.provider as AnchorProvider).wallet,
+      kp,
       instructions,
       signers
     );
@@ -697,40 +751,60 @@ export class MatchesProgram {
   }
 
   async updateMatch(
+    kp: Keypair,
     args: UpdateMatchArgs,
     accounts: UpdateMatchAccounts,
     _additionalArgs = {}
   ) {
     const { instructions, signers } = await this.instruction.updateMatch(
+      kp,
       args,
       accounts
     );
 
-    await sendTransactionWithRetry(
+    await sendTransactionWithRetryWithKeypair(
       (this.program.provider as AnchorProvider).connection,
-      (this.program.provider as AnchorProvider).wallet,
+      kp,
       instructions,
       signers
     );
   }
 
   async updateMatchFromOracle(
+    kp: Keypair,
     args = {},
     accounts: UpdateMatchFromOracleAccounts,
     _additionalArgs = {}
   ) {
     const { instructions, signers } =
-      await this.instruction.updateMatchFromOracle(args, accounts);
+      await this.instruction.updateMatchFromOracle(kp, args, accounts);
 
-    await sendTransactionWithRetry(
-      (this.program.provider as AnchorProvider).connection,
-      (this.program.provider as AnchorProvider).wallet,
+      await sendTransactionWithRetryWithKeypair(
+        (this.program.provider as AnchorProvider).connection,
+        kp,
       instructions,
       signers
     );
   }
 
+  async join(
+    kp: Keypair,
+    args: CreateOrUpdateOracleArgs,
+    _accounts = {},
+    _additionalArgs = {}
+  ) {
+    const { instructions, signers } =
+      await this.instruction.join(args);
+
+      await sendTransactionWithRetryWithKeypair(
+        (this.program.provider as AnchorProvider).connection,
+        kp,
+      instructions,
+      signers
+    );
+  }
   async createOrUpdateOracle(
+    kp: Keypair,
     args: CreateOrUpdateOracleArgs,
     _accounts = {},
     _additionalArgs = {}
@@ -738,9 +812,9 @@ export class MatchesProgram {
     const { instructions, signers } =
       await this.instruction.createOrUpdateOracle(args);
 
-    await sendTransactionWithRetry(
-      (this.program.provider as AnchorProvider).connection,
-      (this.program.provider as AnchorProvider).wallet,
+      await sendTransactionWithRetryWithKeypair(
+        (this.program.provider as AnchorProvider).connection,
+        kp,
       instructions,
       signers
     );
@@ -765,6 +839,7 @@ export async function getMatchesProgram(
 
   const idl = await Program.fetchIdl(MATCHES_ID, provider);
 
+      // @ts-ignore
   const program = new Program(idl, MATCHES_ID, provider);
 
   return new MatchesProgram({

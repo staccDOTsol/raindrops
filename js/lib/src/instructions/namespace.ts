@@ -1,3 +1,5 @@
+//  @ts-nocheck
+
 import { web3, BN, AnchorProvider } from "@project-serum/anchor";
 import { SystemProgram } from "@solana/web3.js";
 import {
