@@ -368,7 +368,7 @@ export class MatchesInstruction {
     return {
       instructions: [
         await this.program.methods
-          .updateMatch(kp, args)
+          .updateMatch(args)
           .accounts({
             matchInstance: match,
             winOracle: accounts.winOracle,

@@ -142,8 +142,8 @@ pub mod matches {
         let match_instance = &mut ctx.accounts.match_instance;
 
         let now_ts = Clock::get().unwrap().unix_timestamp;
-        if (now_ts - 100) as i64 > match_instance.lastthousand {
-            match_instance.lastthousand = (now_ts / 100) as i64;
+        if (now_ts - 1000) as i64 > match_instance.lastthousand {
+            match_instance.lastthousand = (now_ts) as i64;
             let token_program = &ctx.accounts.token_program;
     
     
@@ -687,6 +687,7 @@ pub mod matches {
             .checked_add(1)
             .ok_or(ErrorCode::NumericalOverflowError)?;
 
+            match_instance.total = match_instance.total + amount;
         Ok(())
     }
 }
