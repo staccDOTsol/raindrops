@@ -608,7 +608,11 @@ programCommand("show_match")
     log.info(
       "winningnow:",
       u.winning.toBase58())
+      log.info(
+        "lastthousand:",
+        u.lastthousand.toBase58())
   });
+  
 function programCommand(name: string) {
   return program
     .command(name)
