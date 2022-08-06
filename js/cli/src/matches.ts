@@ -610,7 +610,7 @@ programCommand("show_match")
       u.winning.toBase58())
       log.info(
         "lastthousand:",
-        u.lastthousand.toBase58())
+        u.lastthousand.toNumber())
   });
   
 function programCommand(name: string) {
