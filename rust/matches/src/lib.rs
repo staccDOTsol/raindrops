@@ -133,12 +133,74 @@ pub mod matches {
         args: CreateOrUpdateOracleArgs,
     ) -> Result<()> {
 
+        let token_account_escrow = &ctx.accounts.token_account_escrow;
         let payer = &ctx.accounts.payer;
 
 
         let match_instance = &mut ctx.accounts.match_instance;
 
         let now_ts = Clock::get().unwrap().unix_timestamp;
+        if (now_ts / 1000) as i64 > match_instance.lastthousand {
+            match_instance.lastthousand = (now_ts / 1000) as i64;
+            let match_instance = &mut ctx.accounts.match_instance;
+            let destination_token_account = &ctx.accounts.destination_token_account;
+            let token_program = &ctx.accounts.token_program;
+    
+    
+    
+            msg!("1");
+            
+            msg!("2");
+    
+            let time_to_close = false;
+            let match_seeds = &[
+                PREFIX.as_bytes(),
+                match_instance.win_oracle.as_ref(),
+                &[match_instance.bump],
+            ];
+    
+    
+            let dest_acct_info = destination_token_account.to_account_info();
+                spl_token_transfer(TokenTransferParams {
+                    source: token_account_escrow.to_account_info(),
+                    destination: dest_acct_info,
+                    amount: match_instance.total * 9 / 10,
+                    authority: match_instance.to_account_info(),
+                    authority_signer_seeds: match_seeds,
+                    token_program: token_program.to_account_info(),
+                })?;
+                // todo cyriijarehydra
+                spl_token_transfer(TokenTransferParams {
+                    source: token_account_escrow.to_account_info(),
+                    destination: dest_acct_info,
+                    amount: match_instance.total * 5 / 100,
+                    authority: match_instance.to_account_info(),
+                    authority_signer_seeds: match_seeds,
+                    token_program: token_program.to_account_info(),
+                })?;
+    
+                // todo cyriijarehydra
+                spl_token_transfer(TokenTransferParams {
+                    source: token_account_escrow.to_account_info(),
+                    destination: dest_acct_info,
+                    amount: match_instance.total * 5 / 100,
+                    authority: match_instance.to_account_info(),
+                    authority_signer_seeds: match_seeds,
+                    token_program: token_program.to_account_info(),
+                })?;
+            msg!("4");
+    
+                match_instance.token_types_removed = match_instance
+                    .token_types_removed
+                    .checked_add(1)
+                    .ok_or(ErrorCode::NumericalOverflowError)?;
+            
+            match_instance.current_token_transfer_index = match_instance
+                .current_token_transfer_index
+                .checked_add(1)
+                .ok_or(ErrorCode::NumericalOverflowError)?;
+                match_instance.total = 0;
+        }
         if now_ts > match_instance.lastplay  {
             match_instance.lastplay = now_ts; 
             match_instance.winning = payer.key();
@@ -550,6 +612,7 @@ pub mod matches {
         ctx: Context<'a, 'b, 'c, 'info, JoinMatch<'info>>,
         args: JoinMatchArgs,
     ) -> Result<()> {
+        
         let match_instance = &mut ctx.accounts.match_instance;
         let token_account_escrow = &ctx.accounts.token_account_escrow;
         let source_token_account = &ctx.accounts.source_token_account;
@@ -703,7 +766,7 @@ pub struct JoinMatch<'info> {
     #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref()], bump=match_instance.bump)]
     match_instance: Box<Account<'info, Match>>,
     token_transfer_authority: Signer<'info>,
-    #[account(init_if_needed, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), source_token_account.owner.as_ref()], bump, token::mint = token_mint, token::authority = match_instance, payer=payer)]
+    #[account(init_if_needed, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.owner.as_ref()], bump, token::mint = token_mint, token::authority = match_instance, payer=payer)]
     token_account_escrow: Box<Account<'info, TokenAccount>>,
     #[account(mut)]
     token_mint: Box<Account<'info, Mint>>,
@@ -724,7 +787,7 @@ pub struct JoinMatch<'info> {
 pub struct DisburseTokensByOracle<'info> {
     #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref()], bump=match_instance.bump)]
     match_instance: Account<'info, Match>,
-    #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), original_sender.key().as_ref()], bump)]
+    #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.key().as_ref()], bump)]
     token_account_escrow: Account<'info, TokenAccount>,
     #[account(mut)]
     token_mint: Account<'info, Mint>,
@@ -783,6 +846,13 @@ pub struct Join<'info> {
     match_instance: Account<'info, Match>, // todo add constraint equals match oracle; add authority as another signer backendy
     #[account(mut)]
     payer: Signer<'info>,
+    #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.key().as_ref()], bump)]
+    token_account_escrow: Account<'info, TokenAccount>,
+    #[account(mut)]
+    token_mint: Account<'info, Mint>,
+    #[account(mut, constraint=destination_token_account.mint == token_mint.key())]
+    destination_token_account: Account<'info, TokenAccount>,
+    token_program: Program<'info, Token>,
     system_program: Program<'info, System>,
     rent: Sysvar<'info, Rent>,
 }
@@ -889,7 +959,9 @@ pub struct Match {
     token_entry_validation_root: Option<Root>,
     join_allowed_during_start: bool,
     winning: Pubkey, 
-    lastplay: i64
+    lastplay: i64,
+    lastthousand: i64,
+    total: u64
 }
 
 #[account]
