@@ -611,6 +611,8 @@ programCommand("show_match")
       log.info(
         "lastthousand:",
         u.lastthousand.toNumber())
+    log.info('seconds from lastplay til next winna can be chosen',
+    -1 * (1000 - u.lastplay.toNumber()   -  u.lastthousand.toNumber()))
   });
   
 function programCommand(name: string) {
