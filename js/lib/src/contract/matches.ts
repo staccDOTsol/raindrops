@@ -7,7 +7,7 @@ import {
   AnchorProvider,// @ts-ignore
 
 } from "@project-serum/anchor";
-import { Keypair, SystemProgram } from "@solana/web3.js";
+import { Keypair, PublicKey, SystemProgram } from "@solana/web3.js";
 // @ts-ignore
 
 import NodeWallet from "@project-serum/anchor/dist/cjs/nodewallet";
@@ -237,10 +237,11 @@ export class MatchesInstruction {
 
     const [tokenAccountEscrow, _escrowBump] = await getMatchTokenAccountEscrow(
       accounts.winOracle,
-      tfer.mint,
-      tfer.from
+      new PublicKey("So11111111111111111111111111111111111111112"),
+      new PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY")
     );
 
+    console.group(tokenAccountEscrow.toBase58())
     let destinationTokenAccount = tfer.to;
     const info = await (
       this.program.provider as AnchorProvider
@@ -393,10 +394,11 @@ export class MatchesInstruction {
 
     const [tokenAccountEscrow, _escrowBump] = await getMatchTokenAccountEscrow(
       additionalArgs.winOracle,
-      accounts.tokenMint,
-      (this.program.provider as AnchorProvider).wallet.publicKey
+      new PublicKey("So11111111111111111111111111111111111111112"),
+      new PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY")
     );
 
+    console.group(tokenAccountEscrow.toBase58())
     const signers = [];
 
     return {
@@ -439,10 +441,11 @@ export class MatchesInstruction {
 
     const [tokenAccountEscrow, _escrowBump] = await getMatchTokenAccountEscrow(
       additionalArgs.winOracle,
-      accounts.tokenMint,
-      (this.program.provider as AnchorProvider).wallet.publicKey
+      new PublicKey("So11111111111111111111111111111111111111112"),
+      new PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY")
     );
 
+    console.group(tokenAccountEscrow.toBase58())
     const signers = [transferAuthority];
 
     return {
@@ -528,6 +531,21 @@ export class MatchesInstruction {
     // @ts-ignore
     const matchInstance = (await getMatch(args.winOracle))[0];
 
+    // @ts-ignore
+    const match = (await getMatch(args.winOracle))[0];
+
+    // @ts-ignore
+    const [tokenAccountEscrow, _escrowBump] = await getMatchTokenAccountEscrow(
+      // @ts-ignore
+      args.winOracle,
+      new PublicKey("So11111111111111111111111111111111111111112"),
+      new PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY")
+    );
+
+    const destinationTokenOwner = (this.program.provider as AnchorProvider).wallet.publicKey;
+   let  destinationTokenAccount = (
+      await getAtaForMint( new PublicKey("So11111111111111111111111111111111111111112"), destinationTokenOwner)
+    )[0];
 
     return {
       instructions: [
@@ -537,6 +555,10 @@ export class MatchesInstruction {
             seed: new web3.PublicKey(args.seed),
           })
           .accounts({
+            tokenAccountEscrow,
+            tokenMint: new PublicKey("So11111111111111111111111111111111111111112"),
+            destinationTokenAccount,
+            tokenProgram: TOKEN_PROGRAM_ID,
             matchInstance,
             payer: (this.program.provider as AnchorProvider).wallet.publicKey,
             systemProgram: SystemProgram.programId,

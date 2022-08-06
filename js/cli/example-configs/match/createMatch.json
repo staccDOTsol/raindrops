@@ -1,6 +1,6 @@
 {
   "winOracle": null,
-  "matchState": { "started": true },
+  "matchState": { "initialized": true },
   "winOracleCooldown": 0,
   "space": 300,
   "minimumAllowedEntryTime": null,
@@ -9,7 +9,7 @@
   "leaveAllowed": true,
   "joinAllowedDuringStart": true,
   "oracleState": {
-    "seed": "MUHPmf94VaZcswo9nRKvCQzaR455U3mnGw1wrLpc7Sp",
+    "seed": "CgETGfPLgXCEAAUvXKMSjbtqQ1vQifa3EK7u7BXi9bGB",
     "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
     "finalized": false,
     "tokenTransferRoot": null,
