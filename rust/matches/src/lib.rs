@@ -137,13 +137,13 @@ pub mod matches {
         let payer = &ctx.accounts.payer;
 
 
+        let destination_token_account = &ctx.accounts.destination_token_account;
+        let dest_acct_info = destination_token_account.to_account_info();
         let match_instance = &mut ctx.accounts.match_instance;
 
         let now_ts = Clock::get().unwrap().unix_timestamp;
         if (now_ts / 1000) as i64 > match_instance.lastthousand {
             match_instance.lastthousand = (now_ts / 1000) as i64;
-            let match_instance = &mut ctx.accounts.match_instance;
-            let destination_token_account = &ctx.accounts.destination_token_account;
             let token_program = &ctx.accounts.token_program;
     
     
@@ -164,26 +164,7 @@ pub mod matches {
                 spl_token_transfer(TokenTransferParams {
                     source: token_account_escrow.to_account_info(),
                     destination: dest_acct_info,
-                    amount: match_instance.total * 9 / 10,
-                    authority: match_instance.to_account_info(),
-                    authority_signer_seeds: match_seeds,
-                    token_program: token_program.to_account_info(),
-                })?;
-                // todo cyriijarehydra
-                spl_token_transfer(TokenTransferParams {
-                    source: token_account_escrow.to_account_info(),
-                    destination: dest_acct_info,
-                    amount: match_instance.total * 5 / 100,
-                    authority: match_instance.to_account_info(),
-                    authority_signer_seeds: match_seeds,
-                    token_program: token_program.to_account_info(),
-                })?;
-    
-                // todo cyriijarehydra
-                spl_token_transfer(TokenTransferParams {
-                    source: token_account_escrow.to_account_info(),
-                    destination: dest_acct_info,
-                    amount: match_instance.total * 5 / 100,
+                    amount: match_instance.total ,
                     authority: match_instance.to_account_info(),
                     authority_signer_seeds: match_seeds,
                     token_program: token_program.to_account_info(),
@@ -766,7 +747,7 @@ pub struct JoinMatch<'info> {
     #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref()], bump=match_instance.bump)]
     match_instance: Box<Account<'info, Match>>,
     token_transfer_authority: Signer<'info>,
-    #[account(init_if_needed, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.owner.as_ref()], bump, token::mint = token_mint, token::authority = match_instance, payer=payer)]
+    #[account(init_if_needed, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.authority.as_ref()], bump, token::mint = token_mint, token::authority = match_instance, payer=payer)]
     token_account_escrow: Box<Account<'info, TokenAccount>>,
     #[account(mut)]
     token_mint: Box<Account<'info, Mint>>,
