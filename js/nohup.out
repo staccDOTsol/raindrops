@@ -117,3 +117,814 @@
 7bNap6bAX1u91Nmkis8ieRYAQx92re5i65CSeUqGx51J
 7bNap6bAX1u91Nmkis8ieRYAQx92re5i65CSeUqGx51J
 7bNap6bAX1u91Nmkis8ieRYAQx92re5i65CSeUqGx51J
+7bNap6bAX1u91Nmkis8ieRYAQx92re5i65CSeUqGx51J
+7bNap6bAX1u91Nmkis8ieRYAQx92re5i65CSeUqGx51J
+7bNap6bAX1u91Nmkis8ieRYAQx92re5i65CSeUqGx51J
+7bNap6bAX1u91Nmkis8ieRYAQx92re5i65CSeUqGx51J
+7bNap6bAX1u91Nmkis8ieRYAQx92re5i65CSeUqGx51J
+7bNap6bAX1u91Nmkis8ieRYAQx92re5i65CSeUqGx51J
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36
+    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
+                                         ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatch (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:36:42)
+    at MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:639:37)
+    at MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:753:47)
+    at Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:27)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(754,17): error TS2304: Cannot find name 'PDA'.
+lib/src/contract/matches.ts(755,32): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(757,13): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(758,36): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(759,17): error TS2304: Cannot find name 'walletKeyPair'.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2304, 2304, 2304, 2304, 2304 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(754,17): error TS2304: Cannot find name 'PDA'.
+lib/src/contract/matches.ts(755,32): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(757,13): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(758,36): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(759,17): error TS2304: Cannot find name 'walletKeyPair'.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2304, 2304, 2304, 2304, 2304 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(754,17): error TS2304: Cannot find name 'PDA'.
+lib/src/contract/matches.ts(755,32): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(757,13): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(758,36): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(759,17): error TS2304: Cannot find name 'walletKeyPair'.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2304, 2304, 2304, 2304, 2304 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(754,17): error TS2304: Cannot find name 'PDA'.
+lib/src/contract/matches.ts(755,32): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(757,13): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(758,36): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(759,17): error TS2304: Cannot find name 'walletKeyPair'.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2304, 2304, 2304, 2304, 2304 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(754,17): error TS2304: Cannot find name 'PDA'.
+lib/src/contract/matches.ts(755,32): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(757,13): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(758,36): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(759,17): error TS2304: Cannot find name 'walletKeyPair'.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2304, 2304, 2304, 2304, 2304 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(754,17): error TS2304: Cannot find name 'PDA'.
+lib/src/contract/matches.ts(755,32): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(757,13): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(758,36): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(759,17): error TS2304: Cannot find name 'walletKeyPair'.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2304, 2304, 2304, 2304, 2304 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(754,17): error TS2304: Cannot find name 'PDA'.
+lib/src/contract/matches.ts(755,32): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(757,13): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(758,36): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(759,17): error TS2304: Cannot find name 'walletKeyPair'.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2304, 2304, 2304, 2304, 2304 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(754,17): error TS2304: Cannot find name 'PDA'.
+lib/src/contract/matches.ts(755,32): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(757,13): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(758,36): error TS2304: Cannot find name 'config'.
+lib/src/contract/matches.ts(759,17): error TS2304: Cannot find name 'walletKeyPair'.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2304, 2304, 2304, 2304, 2304 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(756,32): error TS2304: Cannot find name 'config'.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2304 ]
+}
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863
+        'failed to get info about account ' + publicKey.toBase58() + ': ' + e,
+                                                        ^
+TypeError: Cannot read properties of undefined (reading 'toBase58')
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863:57)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchOracle (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:653:24)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:28)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863
+        'failed to get info about account ' + publicKey.toBase58() + ': ' + e,
+                                                        ^
+TypeError: Cannot read properties of undefined (reading 'toBase58')
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863:57)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchOracle (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:653:24)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:28)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863
+        'failed to get info about account ' + publicKey.toBase58() + ': ' + e,
+                                                        ^
+TypeError: Cannot read properties of undefined (reading 'toBase58')
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863:57)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchOracle (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:653:24)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:28)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863
+        'failed to get info about account ' + publicKey.toBase58() + ': ' + e,
+                                                        ^
+TypeError: Cannot read properties of undefined (reading 'toBase58')
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863:57)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchOracle (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:653:24)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:28)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863
+        'failed to get info about account ' + publicKey.toBase58() + ': ' + e,
+                                                        ^
+TypeError: Cannot read properties of undefined (reading 'toBase58')
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863:57)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchOracle (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:653:24)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:28)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863
+        'failed to get info about account ' + publicKey.toBase58() + ': ' + e,
+                                                        ^
+TypeError: Cannot read properties of undefined (reading 'toBase58')
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2863:57)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchOracle (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:653:24)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:28)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:765:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:159:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+Rejected via websocket { InstructionError: [ 0, { Custom: 6008 } ] }
+Timeout Error caught {
+  err: { InstructionError: [ 0, [Object] ] },
+  slot: 153216072,
+  confirmations: 0
+}
+Got this far.
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49
+      oracle.toBuffer(),
+             ^
+TypeError: Cannot read properties of undefined (reading 'toBuffer')
+    at getMatchTokenAccountEscrow (/Users/jarettdunn/raindrops/js/lib/src/utils/pda.ts:49:14)
+    at MatchesInstruction.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:434:79)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:754:39)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+lib/src/contract/matches.ts(755,62): error TS2554: Expected 6 arguments, but got 5.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Module.require (node:internal/modules/cjs/loader:1022:19) {
+  diagnosticCodes: [ 2554 ]
+}
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+  Rejected via websocket { InstructionError: [ 1, { Custom: 3007 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153216684,
+    confirmations: 0
+  }
+  Got this far.
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+  Rejected via websocket { InstructionError: [ 1, { Custom: 3007 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153216688,
+    confirmations: 0
+  }
+  Got this far.
+  Rejected via websocket { InstructionError: [ 1, { Custom: 3007 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153216689,
+    confirmations: 0
+  }
+  Got this far.
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+  Rejected via websocket { InstructionError: [ 1, { Custom: 3007 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153216692,
+    confirmations: 0
+  }
+  Got this far.
+  Rejected via websocket { InstructionError: [ 1, { Custom: 3007 } ] }
+  Rejected via websocket { InstructionError: [ 1, { Custom: 3007 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153216693,
+    confirmations: 0
+  }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153216693,
+    confirmations: 0
+  }
+  Got this far.
+  Got this far.
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98
+    const stateMethods = idl.state ? idl.state.methods : [];
+                             ^
+TypeError: Cannot read properties of null (reading 'state')
+    at Function.parseIxLayout (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98:30)
+    at new BorshInstructionCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:47:43)
+    at new BorshCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/index.ts:39:24)
+    at new Program (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:282:28)
+    at getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:880:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98
+    const stateMethods = idl.state ? idl.state.methods : [];
+                             ^
+TypeError: Cannot read properties of null (reading 'state')
+    at Function.parseIxLayout (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98:30)
+    at new BorshInstructionCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:47:43)
+    at new BorshCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/index.ts:39:24)
+    at new Program (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:282:28)
+    at getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:880:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:435:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98
+    const stateMethods = idl.state ? idl.state.methods : [];
+                             ^
+TypeError: Cannot read properties of null (reading 'state')
+    at Function.parseIxLayout (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98:30)
+    at new BorshInstructionCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:47:43)
+    at new BorshCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/index.ts:39:24)
+    at new Program (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:282:28)
+    at getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:880:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98
+    const stateMethods = idl.state ? idl.state.methods : [];
+                             ^
+TypeError: Cannot read properties of null (reading 'state')
+    at Function.parseIxLayout (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98:30)
+    at new BorshInstructionCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:47:43)
+    at new BorshCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/index.ts:39:24)
+    at new Program (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:282:28)
+    at getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:880:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98
+    const stateMethods = idl.state ? idl.state.methods : [];
+                             ^
+TypeError: Cannot read properties of null (reading 'state')
+    at Function.parseIxLayout (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98:30)
+    at new BorshInstructionCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:47:43)
+    at new BorshCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/index.ts:39:24)
+    at new Program (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:282:28)
+    at getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:880:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:84:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98
+    const stateMethods = idl.state ? idl.state.methods : [];
+                             ^
+TypeError: Cannot read properties of null (reading 'state')
+    at Function.parseIxLayout (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98:30)
+    at new BorshInstructionCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:47:43)
+    at new BorshCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/index.ts:39:24)
+    at new Program (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:282:28)
+    at getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:880:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98
+    const stateMethods = idl.state ? idl.state.methods : [];
+                             ^
+TypeError: Cannot read properties of null (reading 'state')
+    at Function.parseIxLayout (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98:30)
+    at new BorshInstructionCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:47:43)
+    at new BorshCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/index.ts:39:24)
+    at new Program (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:282:28)
+    at getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:880:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98
+    const stateMethods = idl.state ? idl.state.methods : [];
+                             ^
+TypeError: Cannot read properties of null (reading 'state')
+    at Function.parseIxLayout (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:98:30)
+    at new BorshInstructionCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/instruction.ts:47:43)
+    at new BorshCoder (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/coder/borsh/index.ts:39:24)
+    at new Program (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:282:28)
+    at getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:880:19)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862
+      throw new Error(
+            ^
+Error: failed to get info about account Hp1yXJfPUqU16HRzMC1JAJrmcHMBzZefsLKzDYvcYrYT: FetchError: request to https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/ failed, reason: getaddrinfo ENOTFOUND psytrbhymqlkfrhudd.dev.genesysgo.net
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.fetchIdl (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:346:25)
+    at async getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:877:15)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862
+      throw new Error(
+            ^
+Error: failed to get info about account Hp1yXJfPUqU16HRzMC1JAJrmcHMBzZefsLKzDYvcYrYT: FetchError: request to https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/ failed, reason: getaddrinfo ENOTFOUND psytrbhymqlkfrhudd.dev.genesysgo.net
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.fetchIdl (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:346:25)
+    at async getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:877:15)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:84:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862
+      throw new Error(
+            ^
+Error: failed to get info about account Hp1yXJfPUqU16HRzMC1JAJrmcHMBzZefsLKzDYvcYrYT: FetchError: request to https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/ failed, reason: getaddrinfo ENOTFOUND psytrbhymqlkfrhudd.dev.genesysgo.net
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.fetchIdl (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:346:25)
+    at async getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:877:15)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862
+      throw new Error(
+            ^
+Error: failed to get info about account Hp1yXJfPUqU16HRzMC1JAJrmcHMBzZefsLKzDYvcYrYT: FetchError: request to https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/ failed, reason: getaddrinfo ENOTFOUND psytrbhymqlkfrhudd.dev.genesysgo.net
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.fetchIdl (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:346:25)
+    at async getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:877:15)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862
+      throw new Error(
+            ^
+Error: failed to get info about account Hp1yXJfPUqU16HRzMC1JAJrmcHMBzZefsLKzDYvcYrYT: FetchError: request to https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/ failed, reason: getaddrinfo ENOTFOUND psytrbhymqlkfrhudd.dev.genesysgo.net
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.fetchIdl (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:346:25)
+    at async getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:877:15)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862
+      throw new Error(
+            ^
+Error: failed to get info about account Hp1yXJfPUqU16HRzMC1JAJrmcHMBzZefsLKzDYvcYrYT: FetchError: request to https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/ failed, reason: getaddrinfo ENOTFOUND psytrbhymqlkfrhudd.dev.genesysgo.net
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.fetchIdl (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:346:25)
+    at async getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:877:15)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862
+      throw new Error(
+            ^
+Error: failed to get info about account Hp1yXJfPUqU16HRzMC1JAJrmcHMBzZefsLKzDYvcYrYT: FetchError: request to https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/ failed, reason: getaddrinfo ENOTFOUND psytrbhymqlkfrhudd.dev.genesysgo.net
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.fetchIdl (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:346:25)
+    at async getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:877:15)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:142:27)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862
+      throw new Error(
+            ^
+Error: failed to get info about account Hp1yXJfPUqU16HRzMC1JAJrmcHMBzZefsLKzDYvcYrYT: FetchError: request to https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/ failed, reason: getaddrinfo ENOTFOUND psytrbhymqlkfrhudd.dev.genesysgo.net
+    at Connection.getAccountInfo (/Users/jarettdunn/raindrops/js/lib/node_modules/@solana/web3.js/src/connection.ts:2862:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Function.fetchIdl (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/index.ts:346:25)
+    at async getMatchesProgram (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:877:15)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:435:27)
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+  Rejected via websocket { InstructionError: [ 1, { Custom: 2000 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153218659,
+    confirmations: 0
+  }
+  Got this far.
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+  Rejected via websocket { InstructionError: [ 1, { Custom: 2000 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153218662,
+    confirmations: 0
+  }
+  Got this far.
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+  Rejected via websocket { InstructionError: [ 1, { Custom: 2000 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153218666,
+    confirmations: 0
+  }
+  Got this far.
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+  Rejected via websocket { InstructionError: [ 1, { Custom: 2000 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153218667,
+    confirmations: 0
+  }
+  Got this far.
+  Rejected via websocket { InstructionError: [ 1, { Custom: 2000 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153218668,
+    confirmations: 0
+  }
+  Got this far.
+  Rejected via websocket { InstructionError: [ 1, { Custom: 2000 } ] }
+  Timeout Error caught {
+    err: { InstructionError: [ 1, [Object] ] },
+    slot: 153218669,
+    confirmations: 0
+  }
+  Got this far.
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy

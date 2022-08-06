@@ -9,7 +9,7 @@
   "leaveAllowed": true,
   "joinAllowedDuringStart": true,
   "oracleState": {
-    "seed": "CgETGfPLgXCEAAUvXKMSjbtqQ1vQifa3EK7u7BXi9bGB",
+    "seed": "4B54MUDkeasn6M99jQsxheprttLctMpx6AZK2NQbdhux",
     "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
     "finalized": false,
     "tokenTransferRoot": null,
@@ -18,7 +18,7 @@
   "tokensToJoin": [
     {
       "mint": "So11111111111111111111111111111111111111112",
-      "amount": 1380000,
+      "amount": 13800,
       "sourceType": 1,
       "index": 0,
       "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"

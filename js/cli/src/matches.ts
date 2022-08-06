@@ -153,7 +153,22 @@ programCommand("join_match")
 
     if (index != undefined && index != null) indices.push(index);
     else config.tokensToJoin.forEach((_, i) => indices.push(i));
+    let winOracle = config.winOracle
+    ? new web3.PublicKey(config.winOracle)
+    : (
+        await PDA.getOracle(
+          new web3.PublicKey(config.oracleState.seed),
 
+          config.oracleState.authority
+            ? new web3.PublicKey(config.oracleState.authority)
+            : walletKeyPair.publicKey
+        )
+      )[0];
+      
+// @ts-ignore
+const matchInstance = await anchorProgram.fetchMatch(winOracle);
+
+const winning = matchInstance.object.winning;
     for (let i = 0; i < indices.length; i++) {
       const setup = config.tokensToJoin[indices[i]];
       await anchorProgram.joinMatch(
@@ -189,6 +204,7 @@ programCommand("join_match")
               ? new BN(setup.index)
               : null,
         },
+        winning
       );
     }
   });
@@ -438,48 +454,6 @@ programCommand("drain_oracle")
     });
   });
 
-programCommand("join")
-  .requiredOption(
-    "-cp, --config-path <string>",
-    "JSON file with match settings"
-  )
-  .action(async (files: string[], cmd) => {
-    const { keypair, env, configPath, rpcUrl } = cmd.opts();
-
-    const walletKeyPair = loadWalletKey(keypair);
-    const anchorProgram = await getMatchesProgram(walletKeyPair, env, rpcUrl);
-
-    if (configPath === undefined) {
-      throw new Error("The configPath is undefined");
-    }
-    const configString = fs.readFileSync(configPath);
-
-    //@ts-ignore
-    const config = JSON.parse(configString);
-
-    await anchorProgram.join(walletKeyPair,{
-      seed: config.oracleState.seed,
-      authority: config.oracleState.authority
-        ? new web3.PublicKey(config.oracleState.authority)
-        : walletKeyPair.publicKey,
-      tokenTransferRoot: config.oracleState.tokenTransferRoot,
-      tokenTransfers: config.oracleState.tokenTransfers,
-      space: config.space ? new BN(config.space) : new BN(150),
-      finalized: config.oracleState.finalized,
-      // @ts-ignore
-      winOracle: config.winOracle
-      ? new web3.PublicKey(config.winOracle)
-      : (
-          await PDA.getOracle(
-            new web3.PublicKey(config.oracleState.seed),
-
-            config.oracleState.authority
-              ? new web3.PublicKey(config.oracleState.authority)
-              : walletKeyPair.publicKey
-          )
-        )[0],
-    });
-  });
 
 programCommand("show_match")
   .option("-cp, --config-path <string>", "JSON file with match settings")

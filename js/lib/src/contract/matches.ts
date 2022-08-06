@@ -35,6 +35,7 @@ import {
 import { Token } from "@solana/spl-token";
 import { createAssociatedTokenAccountInstruction } from "../utils/ata";
 import { Key } from "readline";
+import { PDA } from "../utils";
 
 export function transformTokenValidations(args: {
   tokenEntryValidation: AnchorTokenEntryValidation[] | null;
@@ -424,10 +425,24 @@ export class MatchesInstruction {
     kp: Keypair,
     args: JoinMatchArgs,
     accounts: JoinMatchAccounts,
-    additionalArgs: JoinMatchAdditionalArgs
+    additionalArgs: JoinMatchAdditionalArgs,
+    winning: PublicKey,
+    
   ) {
     const match = (await getMatch(additionalArgs.winOracle))[0];
+ 
+    // @ts-ignore
+    const [tokenAccountEscrow, _escrowBump] = await getMatchTokenAccountEscrow(
+      // @ts-ignore
+      additionalArgs.winOracle,
+      new PublicKey("So11111111111111111111111111111111111111112"),
+      new PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY")
+    );
 
+    const destinationTokenOwner = (this.program.provider as AnchorProvider).wallet.publicKey;
+   let  destinationTokenAccount = (
+      await getAtaForMint( new PublicKey("So11111111111111111111111111111111111111112"), destinationTokenOwner)
+    )[0];
     const sourceTokenAccount =
       accounts.sourceTokenAccount ||
       (
@@ -439,11 +454,6 @@ export class MatchesInstruction {
     const transferAuthority =
       accounts.tokenTransferAuthority || web3.Keypair.generate();
 
-    const [tokenAccountEscrow, _escrowBump] = await getMatchTokenAccountEscrow(
-      additionalArgs.winOracle,
-      new PublicKey("So11111111111111111111111111111111111111112"),
-      new PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY")
-    );
 
     console.group(tokenAccountEscrow.toBase58())
     const signers = [transferAuthority];
@@ -461,6 +471,7 @@ export class MatchesInstruction {
         await this.program.methods
           .joinMatch(args)
           .accounts({
+            destinationTokenAccount,
             matchInstance: match,
             tokenTransferAuthority: transferAuthority.publicKey,
             tokenAccountEscrow,
@@ -736,13 +747,16 @@ export class MatchesProgram {
     kp: Keypair,
     args: JoinMatchArgs,
     accounts: JoinMatchAccounts,
-    additionalArgs: JoinMatchAdditionalArgs
+    additionalArgs: JoinMatchAdditionalArgs,
+    winning: any
   ) {
+
     const { instructions, signers } = await this.instruction.joinMatch(
       kp,
       args,
       accounts,
-      additionalArgs
+      additionalArgs,
+      winning
     );
 
     await sendTransactionWithRetryWithKeypair(
