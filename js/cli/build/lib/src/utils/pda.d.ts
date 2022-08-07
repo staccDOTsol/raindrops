@@ -2,6 +2,7 @@ import { web3, BN } from "@project-serum/anchor";
 export declare const getAtaForMint: (mint: web3.PublicKey, wallet: web3.PublicKey) => Promise<[web3.PublicKey, number]>;
 export declare const getMatch: (oracle: web3.PublicKey) => Promise<[web3.PublicKey, number]>;
 export declare const getMatchTokenAccountEscrow: (oracle: web3.PublicKey, tokenMint: web3.PublicKey, tokenOwner: web3.PublicKey) => Promise<[web3.PublicKey, number]>;
+export declare const getJares: (whoAmI: web3.PublicKey) => Promise<[web3.PublicKey, number]>;
 export declare const getOracle: (seed: web3.PublicKey, payer: web3.PublicKey) => Promise<[web3.PublicKey, number]>;
 export declare const getNamespacePDA: (mint: web3.PublicKey) => Promise<[web3.PublicKey, number]>;
 export declare const getItemPDA: (mint: web3.PublicKey, index: BN) => Promise<[web3.PublicKey, number]>;
