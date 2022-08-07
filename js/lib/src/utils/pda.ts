@@ -54,6 +54,17 @@ export const getMatchTokenAccountEscrow = async (
   );
 };
 
+export const getJares = async (
+  whoAmI: web3.PublicKey
+): Promise<[web3.PublicKey, number]> => {
+  return await web3.PublicKey.findProgramAddress(
+    [
+      Buffer.from(MATCHES_PREFIX),
+      whoAmI.toBuffer(),
+    ],
+    MATCHES_ID
+  );
+};
 export const getOracle = async (
   seed: web3.PublicKey,
   payer: web3.PublicKey

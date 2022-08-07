@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { web3, Program, BN } from "@project-serum/anchor";
-import { Keypair, PublicKey } from "@solana/web3.js";
+import { Keypair } from "@solana/web3.js";
 import NodeWallet from "@project-serum/anchor/dist/cjs/nodewallet";
 import { ObjectWrapper } from "./common";
 import { AnchorMatchState, AnchorTokenDelta, AnchorTokenEntryValidation, TokenType } from "../state/matches";
@@ -142,7 +142,7 @@ export declare class MatchesInstruction {
         instructions: web3.TransactionInstruction[];
         signers: any[];
     }>;
-    joinMatch(kp: Keypair, args: JoinMatchArgs, accounts: JoinMatchAccounts, additionalArgs: JoinMatchAdditionalArgs, winning: PublicKey): Promise<{
+    joinMatch(kp: any, args: JoinMatchArgs, accounts: JoinMatchAccounts, additionalArgs: JoinMatchAdditionalArgs): Promise<{
         instructions: web3.TransactionInstruction[];
         signers: web3.Keypair[];
     }>;
@@ -173,7 +173,7 @@ export declare class MatchesProgram {
     disburseTokensByOracle(args: DisburseTokensByOracleArgs, accounts: DisburseTokensByOracleAccounts, additionalArgs: DisburseTokensByOracleAdditionalArgs): Promise<void>;
     drainMatch(args: DrainMatchArgs, accounts: DrainMatchAccounts, additionalArgs: DrainMatchAdditionalArgs): Promise<void>;
     drainOracle(args: DrainOracleArgs, accounts: DrainOracleAccounts, _additionalArgs?: {}): Promise<void>;
-    joinMatch(kp: Keypair, args: JoinMatchArgs, accounts: JoinMatchAccounts, additionalArgs: JoinMatchAdditionalArgs, winning: any): Promise<void>;
+    joinMatch(kp: any, args: JoinMatchArgs, accounts: JoinMatchAccounts, additionalArgs: JoinMatchAdditionalArgs): Promise<void>;
     leaveMatch(args: LeaveMatchArgs, accounts: LeaveMatchAccounts, additionalArgs: LeaveMatchAdditionalArgs): Promise<void>;
     updateMatch(kp: Keypair, args: UpdateMatchArgs, accounts: UpdateMatchAccounts, _additionalArgs?: {}): Promise<void>;
     updateMatchFromOracle(kp: Keypair, args: {}, accounts: UpdateMatchFromOracleAccounts, _additionalArgs?: {}): Promise<void>;

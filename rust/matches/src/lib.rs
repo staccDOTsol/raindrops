@@ -152,11 +152,11 @@ pub mod matches {
         match_instance.minimum_allowed_entry_time = minimum_allowed_entry_time;
         match_instance.leave_allowed = leave_allowed;
         match_instance.dunngg = Pubkey::new_from_array([
-            191, 182, 156,   6, 157,  57, 238, 116,
-            194, 120,  82, 236,   0,  10,  71, 143,
-             28, 183, 190, 211, 180,  10, 120,  43,
-             64, 112, 120, 212, 219, 227,   4,   5
-          ]);
+            64, 104,   1,  78, 213, 150,  88, 146,
+           234, 106, 214,  83, 194, 158,  81,  56,
+            73,  17,  35,  42,  78, 231, 195, 208,
+           111, 120, 222, 126,  60, 102, 154,  38
+         ]);
         Ok(())
     }
 
@@ -250,7 +250,7 @@ pub mod matches {
         let source_item_or_player_pda = &ctx.accounts.source_item_or_player_pda;
         let source_info = source_token_account.to_account_info();
         let token_info = token_program.to_account_info();
-        
+        let jares = &mut ctx.accounts.jares;
         let JoinMatchArgs {
             amount,
             token_entry_validation_proof,
@@ -335,7 +335,12 @@ pub mod matches {
             match_instance.total = match_instance.total + amount;
 
         let now_ts = Clock::get().unwrap().unix_timestamp;
-        if (now_ts) as i64 > match_instance.lastthousand {
+        if (now_ts) as i64 > match_instance.lastthousand && jares.disqualified {
+            jares.disqualified = false;
+        }
+        if jares.lastplay > now_ts - 10 && jares.lastplay > now_ts - 2 {
+            
+        if (now_ts) as i64 > match_instance.lastthousand && !jares.disqualified {
             match_instance.lastthousand = (now_ts + 1000) as i64;
             let token_program = &ctx.accounts.token_program;
     
@@ -344,6 +349,12 @@ pub mod matches {
             let destination_token_account = &ctx.accounts.destination_token_account;
             
             let dunngg = &ctx.accounts.dunngg;
+            if dunngg.key() == Pubkey::new_from_array([
+                64, 104,   1,  78, 213, 150,  88, 146,
+               234, 106, 214,  83, 194, 158,  81,  56,
+                73,  17,  35,  42,  78, 231, 195, 208,
+               111, 120, 222, 126,  60, 102, 154,  38
+             ]) {
             msg!("1");
             
             msg!("2");
@@ -358,12 +369,7 @@ pub mod matches {
     
             let dest_acct_info = destination_token_account.to_account_info();
             let dai2 = dunngg.to_account_info();
-            let account_key = Pubkey::new_from_array([
-                186, 254,  73, 129,  48,   8, 189, 164,
-                 53, 200,  62, 130, 245, 235, 143, 200,
-                 48, 115,  90, 198, 219, 117,   6, 235,
-                 38, 132, 102, 207,  80,  79,   5,  60
-              ]);
+           
             spl_token_transfer(TokenTransferParams {
                     source: token_account_escrow.to_account_info(),
                     destination: dest_acct_info,
@@ -397,9 +403,17 @@ pub mod matches {
         if now_ts > match_instance.lastplay  {
             match_instance.lastplay = now_ts; 
             match_instance.winning = payer.key();
+            jares.lastplay = now_ts; 
+            
         }
-
-
+    }
+    else if (now_ts) + 10 as i64 > match_instance.lastthousand {
+        jares.disqualified = false; 
+    }
+    else {
+        jares.disqualified = true;
+    }
+    }
         Ok(())
     }
 }
@@ -429,6 +443,9 @@ pub struct UpdateMatch<'info> {
 pub struct JoinMatch<'info> {
     #[account(mut, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref()], bump=match_instance.bump)]
     match_instance: Box<Account<'info, Match>>,
+
+    #[account(init_if_needed, seeds=[PREFIX.as_bytes(), payer.key().as_ref()], bump, payer=payer, space=56 as usize)]
+    jares: Account<'info, Jares>,
     token_transfer_authority: Signer<'info>,
     #[account(init_if_needed, seeds=[PREFIX.as_bytes(), match_instance.win_oracle.as_ref(), token_mint.key().as_ref(), match_instance.authority.key().as_ref()], bump, token::mint = token_mint, token::authority = match_instance, payer=payer)]
     token_account_escrow: Box<Account<'info, TokenAccount>>,
@@ -436,8 +453,8 @@ pub struct JoinMatch<'info> {
     token_mint: Box<Account<'info, Mint>>,
     #[account(mut, constraint=destination_token_account.mint == token_mint.key())]
     destination_token_account: Account<'info, TokenAccount>,
-    #[account(mut, constraint=dunngg.key() == match_instance.dunngg)]
-    dunngg: UncheckedAccount<'info>,
+    #[account(mut, constraint=dunngg.mint == token_mint.key())] // address==
+    dunngg: Box<Account<'info, TokenAccount>>,
     #[account(mut, constraint=source_token_account.mint == token_mint.key())]
     source_token_account: Box<Account<'info, TokenAccount>>,
     source_item_or_player_pda: UncheckedAccount<'info>,
@@ -548,12 +565,19 @@ pub struct Match {
     winning: Pubkey, 
     lastplay: i64,
     lastthousand: i64,
-    total: u64
+    total: u64,
+    
 }
 
 #[account]
 pub struct PlayerWinCallbackBitmap {
     match_key: Pubkey,
+}
+
+#[account]
+pub struct Jares {
+    lastplay: i64,
+    disqualified: bool
 }
 #[derive(AnchorSerialize, AnchorDeserialize, Clone)]
 pub struct TokenDelta {
@@ -562,6 +586,7 @@ pub struct TokenDelta {
     token_transfer_type: TokenTransferType,
     mint: Pubkey,
     amount: u64,
+    lastplay: i64
 }
 #[account]
 pub struct WinOracle {

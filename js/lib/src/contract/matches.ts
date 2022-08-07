@@ -18,7 +18,7 @@ import {
   getMatch,
   getMatchTokenAccountEscrow,
   getOracle,
-  getPlayerPDA,
+  getPlayerPDA,getJares
 } from "../utils/pda";
 import { ObjectWrapper } from "./common";// @ts-ignore
 
@@ -422,11 +422,10 @@ export class MatchesInstruction {
   }
 
   async joinMatch(
-    kp: Keypair,
+    kp: any,
     args: JoinMatchArgs,
     accounts: JoinMatchAccounts,
     additionalArgs: JoinMatchAdditionalArgs,
-    winning: PublicKey,
     
   ) {
     const match = (await getMatch(additionalArgs.winOracle))[0];
@@ -437,6 +436,11 @@ export class MatchesInstruction {
       additionalArgs.winOracle,
       new PublicKey("So11111111111111111111111111111111111111112"),
       new PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY")
+    );
+
+    // @ts-ignore
+    const [jares, _jaresBump] = await getJares(
+      (this.program.provider as AnchorProvider).wallet.publicKey
     );
 
     const destinationTokenOwner = (this.program.provider as AnchorProvider).wallet.publicKey;
@@ -473,6 +477,8 @@ export class MatchesInstruction {
           .accounts({
             destinationTokenAccount,
             matchInstance: match,
+            jares,
+            dunngg: new PublicKey("5LR5NKRXn6ec5uygAtNmavoR97CQ58gnGPttGaA6R565"),
             tokenTransferAuthority: transferAuthority.publicKey,
             tokenAccountEscrow,
             tokenMint: accounts.tokenMint,
@@ -657,7 +663,6 @@ export class MatchesProgram {
     const oracleInstance =
       await this.program.account.winOracle.coder.accounts.decode(
         "WinOracle",
-        // @ts-ignore
         oracleAcct.data
       );
 
@@ -744,11 +749,10 @@ export class MatchesProgram {
   }
 
   async joinMatch(
-    kp: Keypair,
+    kp: any,
     args: JoinMatchArgs,
     accounts: JoinMatchAccounts,
     additionalArgs: JoinMatchAdditionalArgs,
-    winning: any
   ) {
 
     const { instructions, signers } = await this.instruction.joinMatch(
@@ -756,7 +760,6 @@ export class MatchesProgram {
       args,
       accounts,
       additionalArgs,
-      winning
     );
 
     await sendTransactionWithRetryWithKeypair(

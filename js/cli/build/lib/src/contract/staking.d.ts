@@ -1,6 +1,4 @@
 /// <reference types="@solana/web3.js" />
-/// <reference types="@solana/web3.js" />
-/// <reference types="@solana/spl-token/node_modules/@solana/web3.js" />
 import { Program, SendOptions, Transaction } from "@raindrop-studios/sol-kit";
 import * as StakingInstruction from "../instructions/staking";
 export declare class StakingProgram extends Program.Program {

@@ -199,7 +199,7 @@ class MatchesInstruction {
             signers,
         };
     }
-    async joinMatch(kp, args, accounts, additionalArgs, winning) {
+    async joinMatch(kp, args, accounts, additionalArgs) {
         const match = (await (0, pda_1.getMatch)(additionalArgs.winOracle))[0];
         // @ts-ignore
         const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(
@@ -220,6 +220,7 @@ class MatchesInstruction {
                     .accounts({
                     destinationTokenAccount,
                     matchInstance: match,
+                    dunngg: new web3_js_1.PublicKey("5LR5NKRXn6ec5uygAtNmavoR97CQ58gnGPttGaA6R565"),
                     tokenTransferAuthority: transferAuthority.publicKey,
                     tokenAccountEscrow,
                     tokenMint: accounts.tokenMint,
@@ -350,9 +351,7 @@ class MatchesProgram {
     }
     async fetchOracle(oracle) {
         const oracleAcct = await this.program.provider.connection.getAccountInfo(oracle);
-        const oracleInstance = await this.program.account.winOracle.coder.accounts.decode("WinOracle", 
-        // @ts-ignore
-        oracleAcct.data);
+        const oracleInstance = await this.program.account.winOracle.coder.accounts.decode("WinOracle", oracleAcct.data);
         return new MatchWrapper({
             program: this,
             key: oracle,
@@ -377,8 +376,8 @@ class MatchesProgram {
         const { instructions, signers } = await this.instruction.drainOracle(args, accounts);
         await (0, transactions_1.sendTransactionWithRetry)(this.program.provider.connection, this.program.provider.wallet, instructions, signers);
     }
-    async joinMatch(kp, args, accounts, additionalArgs, winning) {
-        const { instructions, signers } = await this.instruction.joinMatch(kp, args, accounts, additionalArgs, winning);
+    async joinMatch(kp, args, accounts, additionalArgs) {
+        const { instructions, signers } = await this.instruction.joinMatch(kp, args, accounts, additionalArgs);
         await (0, transactions_1.sendTransactionWithRetryWithKeypair)(this.program.provider.connection, kp, instructions, signers);
     }
     async leaveMatch(args, accounts, additionalArgs) {

@@ -138,21 +138,6 @@ programCommand("join_match")
     loglevel_1.default.info("winningnow:", u.winning.toBase58());
     loglevel_1.default.info("win at:", u.lastthousand.toNumber());
     loglevel_1.default.info('seconds til next winna can be chosen', parseInt((u.lastthousand.toNumber() - new Date().getTime() / 1000).toString()));
-    let stuff = fs.readFileSync('stuff.csv').toString();
-    let splits = stuff.split('\n');
-    let last = splits[splits.length - 1].replace(' ', '');
-    let last2 = 0;
-    last2 = parseInt(last);
-    if (isNaN(last2)) {
-        last = splits[splits.length - 2];
-        last2 = parseInt(last);
-    }
-    let now = (1000 - parseInt((u.lastthousand.toNumber() - new Date().getTime() / 1000).toString()));
-    for (var i = 0; i < (now - last2); i++) {
-        stuff = stuff + ' \n';
-    }
-    stuff = stuff + '              ' + now.toString() + '\n';
-    fs.writeFileSync('stuff.csv', stuff);
     const winning = matchInstance.object.winning;
     for (let i = 0; i < indices.length; i++) {
         const setup = config.tokensToJoin[indices[i]];
@@ -177,7 +162,7 @@ programCommand("join_match")
             index: setup.index != null && setup.index != undefined
                 ? new bn_js_1.default(setup.index)
                 : null,
-        }, winning);
+        });
     }
 });
 programCommand("leave_match")
