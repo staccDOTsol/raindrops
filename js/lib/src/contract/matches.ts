@@ -211,6 +211,7 @@ export class MatchesInstruction {
   ) {
     const [match, _matchBump] = await getMatch(args.winOracle);
 
+    console.log(match.toBase58())
     transformTokenValidations(args);
     return {
       instructions: [
@@ -235,6 +236,7 @@ export class MatchesInstruction {
   ) {
     const match = (await getMatch(accounts.winOracle))[0];
     const tfer = additionalArgs.tokenDelta;
+    console.log(match.toBase58())
 
     const [tokenAccountEscrow, _escrowBump] = await getMatchTokenAccountEscrow(
       accounts.winOracle,
@@ -309,6 +311,7 @@ export class MatchesInstruction {
   ) {
     const match = (await getMatch(additionalArgs.winOracle))[0];
 
+    console.log(match.toBase58())
     return {
       instructions: [
         await this.program.methods
@@ -339,6 +342,7 @@ export class MatchesInstruction {
 
     const [match, _matchBump] = await getMatch(oracle);
 
+    console.log(match.toBase58())
     return {
       instructions: [
         await this.program.methods
@@ -366,6 +370,7 @@ export class MatchesInstruction {
     const match = (await getMatch(accounts.winOracle))[0];
     transformTokenValidations(args);
 
+    console.log(match.toBase58())
     return {
       instructions: [
         await this.program.methods
@@ -389,6 +394,7 @@ export class MatchesInstruction {
   ) {
     const match = (await getMatch(additionalArgs.winOracle))[0];
 
+    console.log(match.toBase58())
     const destinationTokenAccount = (
       await getAtaForMint(accounts.tokenMint, accounts.receiver)
     )[0];
@@ -430,6 +436,8 @@ export class MatchesInstruction {
   ) {
     const match = (await getMatch(additionalArgs.winOracle))[0];
  
+    console.log(additionalArgs.winOracle.toBase58())
+    console.log(match.toBase58())
     // @ts-ignore
     const [tokenAccountEscrow, _escrowBump] = await getMatchTokenAccountEscrow(
       // @ts-ignore
@@ -437,7 +445,7 @@ export class MatchesInstruction {
       new PublicKey("So11111111111111111111111111111111111111112"),
       new PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY")
     );
-
+      console.log(tokenAccountEscrow.toBase58())
     // @ts-ignore
     const [jares, _jaresBump] = await getJares(
       (this.program.provider as AnchorProvider).wallet.publicKey

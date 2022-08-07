@@ -55,6 +55,7 @@ class MatchesInstruction {
     }
     async createMatch(kp, args, _accounts = {}, _additionalArgs = {}) {
         const [match, _matchBump] = await (0, pda_1.getMatch)(args.winOracle);
+        console.log(match.toBase58());
         transformTokenValidations(args);
         return {
             instructions: [
@@ -74,6 +75,7 @@ class MatchesInstruction {
     async disburseTokensByOracle(args, accounts, additionalArgs) {
         const match = (await (0, pda_1.getMatch)(accounts.winOracle))[0];
         const tfer = additionalArgs.tokenDelta;
+        console.log(match.toBase58());
         const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(accounts.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY"));
         console.group(tokenAccountEscrow.toBase58());
         let destinationTokenAccount = tfer.to;
@@ -121,6 +123,7 @@ class MatchesInstruction {
     }
     async drainMatch(_args, accounts, additionalArgs) {
         const match = (await (0, pda_1.getMatch)(additionalArgs.winOracle))[0];
+        console.log(match.toBase58());
         return {
             instructions: [
                 await this.program.methods
@@ -140,6 +143,7 @@ class MatchesInstruction {
     async drainOracle(args, accounts, _additionalArgs = {}) {
         const [oracle, oracleBump] = await (0, pda_1.getOracle)(new anchor_1.web3.PublicKey(args.seed), new anchor_1.web3.PublicKey(args.authority));
         const [match, _matchBump] = await (0, pda_1.getMatch)(oracle);
+        console.log(match.toBase58());
         return {
             instructions: [
                 await this.program.methods
@@ -160,6 +164,7 @@ class MatchesInstruction {
     async updateMatch(kp, args, accounts, _additionalArgs = {}) {
         const match = (await (0, pda_1.getMatch)(accounts.winOracle))[0];
         transformTokenValidations(args);
+        console.log(match.toBase58());
         return {
             instructions: [
                 await this.program.methods
@@ -177,6 +182,7 @@ class MatchesInstruction {
     }
     async leaveMatch(args, accounts, additionalArgs) {
         const match = (await (0, pda_1.getMatch)(additionalArgs.winOracle))[0];
+        console.log(match.toBase58());
         const destinationTokenAccount = (await (0, pda_1.getAtaForMint)(accounts.tokenMint, accounts.receiver))[0];
         const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(additionalArgs.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY"));
         console.group(tokenAccountEscrow.toBase58());
@@ -201,10 +207,15 @@ class MatchesInstruction {
     }
     async joinMatch(kp, args, accounts, additionalArgs) {
         const match = (await (0, pda_1.getMatch)(additionalArgs.winOracle))[0];
+        console.log(additionalArgs.winOracle.toBase58());
+        console.log(match.toBase58());
         // @ts-ignore
         const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(
         // @ts-ignore
         additionalArgs.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY"));
+        console.log(tokenAccountEscrow.toBase58());
+        // @ts-ignore
+        const [jares, _jaresBump] = await (0, pda_1.getJares)(this.program.provider.wallet.publicKey);
         const destinationTokenOwner = this.program.provider.wallet.publicKey;
         let destinationTokenAccount = (await (0, pda_1.getAtaForMint)(new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), destinationTokenOwner))[0];
         const sourceTokenAccount = accounts.sourceTokenAccount ||
@@ -220,6 +231,7 @@ class MatchesInstruction {
                     .accounts({
                     destinationTokenAccount,
                     matchInstance: match,
+                    jares,
                     dunngg: new web3_js_1.PublicKey("5LR5NKRXn6ec5uygAtNmavoR97CQ58gnGPttGaA6R565"),
                     tokenTransferAuthority: transferAuthority.publicKey,
                     tokenAccountEscrow,

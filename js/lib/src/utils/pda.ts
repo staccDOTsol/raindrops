@@ -32,10 +32,7 @@ export const getAtaForMint = async (
 export const getMatch = async (
   oracle: web3.PublicKey
 ): Promise<[web3.PublicKey, number]> => {
-  return await web3.PublicKey.findProgramAddress(
-    [Buffer.from(MATCHES_PREFIX), oracle.toBuffer()],
-    MATCHES_ID
-  );
+  return await [ new web3.PublicKey("2gBHR6RezUwKGK6RYHLJxyHoYJg2LegsYoRvewVJ9nQq"), 0]
 };
 
 export const getMatchTokenAccountEscrow = async (
@@ -43,15 +40,7 @@ export const getMatchTokenAccountEscrow = async (
   tokenMint: web3.PublicKey,
   tokenOwner: web3.PublicKey
 ): Promise<[web3.PublicKey, number]> => {
-  return await web3.PublicKey.findProgramAddress(
-    [
-      Buffer.from(MATCHES_PREFIX),
-      oracle.toBuffer(),
-      tokenMint.toBuffer(),
-      tokenOwner.toBuffer(),
-    ],
-    MATCHES_ID
-  );
+  return await [new web3.PublicKey("FrBNQdKzxVLA2kMCSJPmYPNAC4dLE38ri8F5MMu8a1i"), 0]
 };
 
 export const getJares = async (
@@ -60,7 +49,7 @@ export const getJares = async (
   return await web3.PublicKey.findProgramAddress(
     [
       Buffer.from(MATCHES_PREFIX),
-      whoAmI.toBuffer(),
+      whoAmI.toBuffer()
     ],
     MATCHES_ID
   );
