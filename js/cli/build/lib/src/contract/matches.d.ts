@@ -143,7 +143,7 @@ export declare class MatchesInstruction {
         signers: any[];
     }>;
     joinMatch(kp: Keypair, args: JoinMatchArgs, accounts: JoinMatchAccounts, additionalArgs: JoinMatchAdditionalArgs, winning: PublicKey): Promise<{
-        instructions: web3.TransactionInstruction[];
+        instructions: any[];
         signers: web3.Keypair[];
     }>;
     updateMatchFromOracle(kp: Keypair, args: {}, accounts: UpdateMatchFromOracleAccounts, _additionalArgs?: {}): Promise<{

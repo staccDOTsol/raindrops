@@ -70,7 +70,7 @@ export declare class Instruction extends SolKitInstruction {
     constructor(args: {
         program: Program.Program;
     });
-    beginArtifactStakeWarmup(args: BeginArtifactStakeWarmupArgs, accounts: BeginArtifactStakeWarmupAccounts): Promise<web3.TransactionInstruction[]>;
+    beginArtifactStakeWarmup(args: BeginArtifactStakeWarmupArgs, accounts: BeginArtifactStakeWarmupAccounts): Promise<any[]>;
     endArtifactStakeWarmup(args: EndArtifactStakeWarmupArgs, accounts: EndArtifactStakeWarmupAccounts): Promise<web3.TransactionInstruction[]>;
     beginArtifactStakeCooldown(args: BeginArtifactStakeCooldownArgs, accounts: BeginArtifactStakeCooldownAccounts): Promise<web3.TransactionInstruction[]>;
     endArtifactStakeCooldown(args: EndArtifactStakeCooldownArgs, accounts: EndArtifactStakeCooldownAccounts): Promise<web3.TransactionInstruction[]>;
