@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+// @ts-nocheck
 import { Wallet, CLI } from "@raindrop-studios/sol-command";
 import { AnchorProvider, web3 } from "@project-serum/anchor";
 import log from "loglevel";

@@ -12,7 +12,6 @@
 ./package-lock.json
 .vscode
 bin
-build/
 config.json
 deploy/
 dist/

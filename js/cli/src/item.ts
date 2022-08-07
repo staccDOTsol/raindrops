@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+// @ts-nocheck
 import * as fs from "fs";
 import log from "loglevel";
 import { program } from "commander";

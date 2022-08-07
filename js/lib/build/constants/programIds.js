@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TOKEN_METADATA_PROGRAM_ID = exports.SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID = exports.TOKEN_PROGRAM_ID = exports.WRAPPED_SOL_MINT = exports.STAKING_ID = exports.MATCHES_ID = exports.PLAYER_ID = exports.ITEM_ID = exports.NAMESPACE_ID = void 0;
+const anchor_1 = require("@project-serum/anchor");
+exports.NAMESPACE_ID = new anchor_1.web3.PublicKey("nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV");
+exports.ITEM_ID = new anchor_1.web3.PublicKey("itemX1XWs9dK8T2Zca4vEEPfCAhRc7yvYFntPjTTVx6");
+exports.PLAYER_ID = new anchor_1.web3.PublicKey("p1exdMJcjVao65QdewkaZRUnU6VPSXhus9n2GzWfh98");
+exports.MATCHES_ID = new anchor_1.web3.PublicKey("FBtXUu9Ga7caK6Wo8UFo2woFtvMpkXzKWM5YNJ5jEqL5");
+exports.STAKING_ID = new anchor_1.web3.PublicKey("stk9HFnKhZN2PZjnn5C4wTzmeiAEgsDkbqnHkNjX1Z4");
+exports.WRAPPED_SOL_MINT = new anchor_1.web3.PublicKey("So11111111111111111111111111111111111111112");
+exports.TOKEN_PROGRAM_ID = new anchor_1.web3.PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA");
+exports.SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID = new anchor_1.web3.PublicKey("ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL");
+exports.TOKEN_METADATA_PROGRAM_ID = new anchor_1.web3.PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");

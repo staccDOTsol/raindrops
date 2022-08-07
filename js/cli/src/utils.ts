@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { program } from "commander";
 import log from "loglevel";
 

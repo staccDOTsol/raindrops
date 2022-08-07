@@ -1,34 +1,13 @@
 
-#nohup ts-node cli/src/matches.ts create_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/id.json -l debug &
 
-nohup ts-node cli/src/matches.ts update_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/id.json -l debug &
-nohup ts-node cli/src/matches.ts create_or_update_oracle -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/id.json -l debug &
+#!/bin/bash
+while [ true ] ; do
 
-nohup ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug &
-nohup ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/id.json -l debug &
-nohup ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/idhydra.json -l debug &
-nohup ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug &
-nohup ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/id.json -l debug &
-nohup ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/idhydra.json -l debug &
+read -t 3 -n 1
+if [ $? = 0 ] ; then
+node matches join_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/id.json -l debug
+else
+echo 'press a button to try to win :) presently the person who presses it first AFTER the 1000s for a round is complete gets the whole pot of wsol ;) be sure to run spl-token wrap 0.5 before playing ;)'
 
-while :
-do 
-
-ts-node cli/src/matches.ts show_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug 
- ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug 
-
- ts-node cli/src/matches.ts show_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug 
- ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/id.json -l debug 
-
- ts-node cli/src/matches.ts show_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug 
- ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/idhydra.json -l debug
-
- ts-node cli/src/matches.ts show_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug 
- ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug
-
- ts-node cli/src/matches.ts show_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug &
-
- ts-node cli/src/matches.ts show_match -cp cli/example-configs/match/createMatch.json -e devnet -k aaa.json -l debug &
- ts-node cli/src/matches.ts join_match -cp cli/example-configs/match/createMatch.json -e devnet -k ~/.config/solana/idhydra.json -l debug
-
-done 
+fi
+done

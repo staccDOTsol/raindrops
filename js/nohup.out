@@ -928,3 +928,288 @@ Error: failed to get info about account Hp1yXJfPUqU16HRzMC1JAJrmcHMBzZefsLKzDYvc
 5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
 5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
 5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+5SVhJKnfxfimSF7EFuzTxsCLnsoEyZN6etyPXs89sNWy
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154
+      throw new Error(`Account does not exist ${address.toString()}`);
+            ^
+Error: Account does not exist B8rN5FdybaxkLnTJ3twVH2pG2ph2xo5KnsqVLLLtDrQV
+    at AccountClient.fetch (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:642:19)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:169:23)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154
+      throw new Error(`Account does not exist ${address.toString()}`);
+            ^
+Error: Account does not exist B8rN5FdybaxkLnTJ3twVH2pG2ph2xo5KnsqVLLLtDrQV
+    at AccountClient.fetch (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:642:19)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:169:23)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154
+      throw new Error(`Account does not exist ${address.toString()}`);
+            ^
+Error: Account does not exist B8rN5FdybaxkLnTJ3twVH2pG2ph2xo5KnsqVLLLtDrQV
+    at AccountClient.fetch (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:642:19)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:169:23)
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154
+      throw new Error(`Account does not exist ${address.toString()}`);
+            ^
+Error: Account does not exist B8rN5FdybaxkLnTJ3twVH2pG2ph2xo5KnsqVLLLtDrQV
+    at AccountClient.fetch (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:642:19)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:169:23)
+Rejected via websocket { InstructionError: [ 0, { Custom: 3012 } ] }
+Timeout Error caught {
+  err: { InstructionError: [ 0, [Object] ] },
+  slot: 153240052,
+  confirmations: 0
+}
+Got this far.
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154
+      throw new Error(`Account does not exist ${address.toString()}`);
+            ^
+Error: Account does not exist B8rN5FdybaxkLnTJ3twVH2pG2ph2xo5KnsqVLLLtDrQV
+    at AccountClient.fetch (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:642:19)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:169:23)
+Rejected via websocket { InstructionError: [ 0, { Custom: 6008 } ] }
+Timeout Error caught {
+  err: { InstructionError: [ 0, [Object] ] },
+  slot: 153240059,
+  confirmations: 0
+}
+Got this far.
+/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154
+      throw new Error(`Account does not exist ${address.toString()}`);
+            ^
+Error: Account does not exist B8rN5FdybaxkLnTJ3twVH2pG2ph2xo5KnsqVLLLtDrQV
+    at AccountClient.fetch (/Users/jarettdunn/raindrops/js/lib/node_modules/@project-serum/anchor/src/program/namespace/account.ts:154:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MatchesProgram.fetchMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:642:19)
+    at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:169:23)
+Rejected via websocket { InstructionError: [ 0, { Custom: 0 } ] }
+Timeout Error caught {
+  err: { InstructionError: [ 0, [Object] ] },
+  slot: 153240553,
+  confirmations: 0
+}
+Got this far.
+BPDnRgqUbk6braEi41NHWETAyS44XPyBjCcGEqyw8zde
+BPDnRgqUbk6braEi41NHWETAyS44XPyBjCcGEqyw8zde
+BPDnRgqUbk6braEi41NHWETAyS44XPyBjCcGEqyw8zde
+BPDnRgqUbk6braEi41NHWETAyS44XPyBjCcGEqyw8zde
+BPDnRgqUbk6braEi41NHWETAyS44XPyBjCcGEqyw8zde
+  Rejecting for timeout...
+  Timeout Error caught { timeout: true }
+  /Users/jarettdunn/raindrops/js/lib/src/utils/transactions.ts:159
+        throw new Error("Timed out awaiting confirmation on transaction");
+              ^
+  Error: Timed out awaiting confirmation on transaction
+      at sendSignedTransaction (/Users/jarettdunn/raindrops/js/lib/src/utils/transactions.ts:159:13)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at runNextTicks (node:internal/process/task_queues:64:3)
+      at processTimers (node:internal/timers:504:9)
+      at async sendTransactionWithRetryWithKeypair (/Users/jarettdunn/raindrops/js/lib/src/utils/transactions.ts:70:26)
+      at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:762:5)
+      at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+BPDnRgqUbk6braEi41NHWETAyS44XPyBjCcGEqyw8zde
+  Rejecting for timeout...
+  Timeout Error caught { timeout: true }
+  /Users/jarettdunn/raindrops/js/lib/src/utils/transactions.ts:159
+        throw new Error("Timed out awaiting confirmation on transaction");
+              ^
+  Error: Timed out awaiting confirmation on transaction
+      at sendSignedTransaction (/Users/jarettdunn/raindrops/js/lib/src/utils/transactions.ts:159:13)
+      at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async sendTransactionWithRetryWithKeypair (/Users/jarettdunn/raindrops/js/lib/src/utils/transactions.ts:70:26)
+      at async MatchesProgram.joinMatch (/Users/jarettdunn/raindrops/js/lib/src/contract/matches.ts:762:5)
+      at async Command.<anonymous> (/Users/jarettdunn/raindrops/js/cli/src/matches.ts:174:7)
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+cli/src/matches.ts(180,228): error TS2304: Cannot find name 'age'.
+cli/src/matches.ts(180,233): error TS1005: ';' expected.
+cli/src/matches.ts(233,4): error TS1128: Declaration or statement expected.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  diagnosticCodes: [ 2304, 1005, 1128 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+cli/src/matches.ts(180,228): error TS2304: Cannot find name 'age'.
+cli/src/matches.ts(180,233): error TS1005: ';' expected.
+cli/src/matches.ts(233,4): error TS1128: Declaration or statement expected.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  diagnosticCodes: [ 2304, 1005, 1128 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+cli/src/matches.ts(180,228): error TS2304: Cannot find name 'age'.
+cli/src/matches.ts(180,233): error TS1005: ';' expected.
+cli/src/matches.ts(233,4): error TS1128: Declaration or statement expected.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  diagnosticCodes: [ 2304, 1005, 1128 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+cli/src/matches.ts(180,228): error TS2304: Cannot find name 'age'.
+cli/src/matches.ts(180,233): error TS1005: ';' expected.
+cli/src/matches.ts(233,4): error TS1128: Declaration or statement expected.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  diagnosticCodes: [ 2304, 1005, 1128 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+cli/src/matches.ts(180,228): error TS2304: Cannot find name 'age'.
+cli/src/matches.ts(180,233): error TS1005: ';' expected.
+cli/src/matches.ts(233,4): error TS1128: Declaration or statement expected.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  diagnosticCodes: [ 2304, 1005, 1128 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+cli/src/matches.ts(180,228): error TS2304: Cannot find name 'age'.
+cli/src/matches.ts(180,233): error TS1005: ';' expected.
+cli/src/matches.ts(233,4): error TS1128: Declaration or statement expected.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  diagnosticCodes: [ 2304, 1005, 1128 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+cli/src/matches.ts(180,228): error TS2304: Cannot find name 'age'.
+cli/src/matches.ts(180,233): error TS1005: ';' expected.
+cli/src/matches.ts(233,4): error TS1128: Declaration or statement expected.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  diagnosticCodes: [ 2304, 1005, 1128 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+cli/src/matches.ts(180,228): error TS2304: Cannot find name 'age'.
+cli/src/matches.ts(180,233): error TS1005: ';' expected.
+cli/src/matches.ts(233,4): error TS1128: Declaration or statement expected.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  diagnosticCodes: [ 2304, 1005, 1128 ]
+}
+/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+cli/src/matches.ts(180,228): error TS2304: Cannot find name 'age'.
+cli/src/matches.ts(180,233): error TS1005: ';' expected.
+cli/src/matches.ts(233,4): error TS1128: Declaration or statement expected.
+
+    at createTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1617:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1174:10)
+    at Object.require.extensions.<computed> [as .ts] (/opt/homebrew/lib/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:998:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:839:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12) {
+  diagnosticCodes: [ 2304, 1005, 1128 ]
+}

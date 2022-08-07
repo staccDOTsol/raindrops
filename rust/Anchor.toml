@@ -8,7 +8,7 @@ wallet = "~/.config/solana/id.json"
 [programs.mainnet]
 item = "itemX1XWs9dK8T2Zca4vEEPfCAhRc7yvYFntPjTTVx6"
 namespace = "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"
-matches = "FBtXUu9Ga7caK6Wo8UFo2woFtvMpkXzKWM5YNJ5jEqL5"
+matches = "4Txug5C2Fta9fLyg3F3GzVQ7iZkLm1r4NUjnDwVxXzHn"
 staking = "stk9HFnKhZN2PZjnn5C4wTzmeiAEgsDkbqnHkNjX1Z4"
 
 [scripts]
