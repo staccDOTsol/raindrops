@@ -5,12 +5,12 @@
   "space": 300,
   "minimumAllowedEntryTime": null,
   "tokenEntryValidation": null,
-  "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+  "authority": "4C46cM2s2Cgg2uUsY4zt9whvfLWwhcAWuZ3QnmdF1CiP",
   "leaveAllowed": true,
   "joinAllowedDuringStart": true,
   "oracleState": {
     "seed": "6bHxaeHhrH42amvYqmxdquzDb3ZiabprKoJuNrSTY9qJ",
-    "authority": "CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY",
+    "authority": "4C46cM2s2Cgg2uUsY4zt9whvfLWwhcAWuZ3QnmdF1CiP",
     "finalized": false,
     "tokenTransferRoot": null,
     "tokenTransfers": [ ]
@@ -18,7 +18,7 @@
   "tokensToJoin": [
     {
       "mint": "So11111111111111111111111111111111111111112",
-      "amount": 13800,
+      "amount": 666138,
       "sourceType": 1,
       "index": 0,
       "validationProgram": "nameAxQRRBnd4kLfsVoZBBXfrByZdZTkh8mULLxLyqV"

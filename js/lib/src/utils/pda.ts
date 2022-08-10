@@ -32,24 +32,54 @@ export const getAtaForMint = async (
 export const getMatch = async (
   oracle: web3.PublicKey
 ): Promise<[web3.PublicKey, number]> => {
-  return await [ new web3.PublicKey("2gBHR6RezUwKGK6RYHLJxyHoYJg2LegsYoRvewVJ9nQq"), 0]
+  return await web3.PublicKey.findProgramAddress(
+    [Buffer.from(MATCHES_PREFIX), new Uint8Array([
+      47, 103, 243, 126,  50, 234, 77,  44,
+     135, 186,  75,  48,  23, 151, 65,  66,
+     127, 232,   0,  36, 191, 106, 31,  22,
+     153,  23, 104, 199, 169, 166, 97, 204
+   ])],
+    MATCHES_ID
+  );
 };
+
 
 export const getMatchTokenAccountEscrow = async (
   oracle: web3.PublicKey,
   tokenMint: web3.PublicKey,
   tokenOwner: web3.PublicKey
 ): Promise<[web3.PublicKey, number]> => {
-  return await [new web3.PublicKey("FrBNQdKzxVLA2kMCSJPmYPNAC4dLE38ri8F5MMu8a1i"), 0]
+  return await web3.PublicKey.findProgramAddress(
+    [
+      Buffer.from(MATCHES_PREFIX),
+      oracle.toBuffer(),
+      tokenMint.toBuffer(),
+      tokenOwner.toBuffer(),
+    ],
+    MATCHES_ID
+  );
 };
 
 export const getJares = async (
-  whoAmI: web3.PublicKey
+  whoAmI: web3.PublicKey,
+  match: web3.PublicKey
 ): Promise<[web3.PublicKey, number]> => {
   return await web3.PublicKey.findProgramAddress(
     [
       Buffer.from(MATCHES_PREFIX),
-      whoAmI.toBuffer()
+      whoAmI.toBuffer(),
+      match.toBuffer()
+    ],
+    MATCHES_ID
+  );
+};
+export const getJares2 = async (
+  whoIsJare: web3.PublicKey
+): Promise<[web3.PublicKey, number]> => {
+  return await web3.PublicKey.findProgramAddress(
+    [
+      Buffer.from(MATCHES_PREFIX),
+      whoIsJare.toBuffer()
     ],
     MATCHES_ID
   );

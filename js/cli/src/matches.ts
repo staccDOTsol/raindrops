@@ -17,6 +17,7 @@ import {
 const { loadWalletKey } = Wallet;
 const { PDA } = Utils
 import MatchesState = State.Matches;
+import { match } from "assert";
 
 programCommand("create_match")
   .requiredOption(
@@ -198,13 +199,12 @@ const winning = matchInstance.object.winning;
         },
         {
           tokenMint: new web3.PublicKey(setup.mint),
-          sourceTokenAccount: null,
-          tokenTransferAuthority: null,
           validationProgram: setup.validationProgram
             ? new web3.PublicKey(setup.validationProgram)
             : null,
         },
         {
+          jares2: matchInstance.object.jares2,
           winOracle: config.winOracle
             ? new web3.PublicKey(config.winOracle)
             : (

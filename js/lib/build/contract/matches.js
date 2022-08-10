@@ -13,9 +13,8 @@ const pda_1 = require("../utils/pda");
 const loglevel_1 = __importDefault(require("loglevel"));
 const connection_1 = require("../utils/connection");
 const transactions_1 = require("../utils/transactions");
-const matches_1 = require("../state/matches"); // @ts-ignore
-const spl_token_1 = require("@solana/spl-token");
 const ata_1 = require("../utils/ata");
+const web3_js_2 = require("@solana/web3.js");
 function transformTokenValidations(args) {
     if (args.tokenEntryValidation) {
         args.tokenEntryValidation = args.tokenEntryValidation.map((r) => {
@@ -55,15 +54,33 @@ class MatchesInstruction {
     }
     async createMatch(kp, args, _accounts = {}, _additionalArgs = {}) {
         const [match, _matchBump] = await (0, pda_1.getMatch)(args.winOracle);
+        let jares2 = web3_js_1.Keypair.generate();
+        const instruction = web3_js_1.SystemProgram.createAccount({
+            fromPubkey: kp.publicKey,
+            newAccountPubkey: jares2.publicKey,
+            space: 8,
+            lamports: await this.program.provider.connection.getMinimumBalanceForRentExemption(8),
+            programId: programIds_1.MATCHES_ID,
+        });
+        const transaction = new web3_js_1.Transaction();
+        transaction.add(instruction);
+        var signature = await (0, web3_js_2.sendAndConfirmTransaction)(this.program.provider.connection, transaction, [kp, jares2]);
+        console.log(signature);
+        console.log(jares2.publicKey.toBase58());
+        console.log(jares2.publicKey.toBase58());
+        console.log(jares2.publicKey.toBase58());
+        console.log(jares2.publicKey.toBase58());
+        console.log(jares2.publicKey.toBase58());
+        console.log(match.toBase58());
         console.log(match.toBase58());
         transformTokenValidations(args);
         return {
             instructions: [
                 await this.program.methods
-                    .createMatch(args)
+                    .createMatch()
                     .accounts({
                     matchInstance: match,
-                    payer: this.program.provider.wallet.publicKey,
+                    dunngg: new web3_js_1.PublicKey("4C46cM2s2Cgg2uUsY4zt9whvfLWwhcAWuZ3QnmdF1CiP"),
                     systemProgram: web3_js_1.SystemProgram.programId,
                     rent: anchor_1.web3.SYSVAR_RENT_PUBKEY,
                 })
@@ -76,7 +93,7 @@ class MatchesInstruction {
         const match = (await (0, pda_1.getMatch)(accounts.winOracle))[0];
         const tfer = additionalArgs.tokenDelta;
         console.log(match.toBase58());
-        const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(accounts.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY"));
+        const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(accounts.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("4C46cM2s2Cgg2uUsY4zt9whvfLWwhcAWuZ3QnmdF1CiP"));
         console.group(tokenAccountEscrow.toBase58());
         let destinationTokenAccount = tfer.to;
         const info = await this.program.provider
@@ -184,7 +201,7 @@ class MatchesInstruction {
         const match = (await (0, pda_1.getMatch)(additionalArgs.winOracle))[0];
         console.log(match.toBase58());
         const destinationTokenAccount = (await (0, pda_1.getAtaForMint)(accounts.tokenMint, accounts.receiver))[0];
-        const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(additionalArgs.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY"));
+        const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(additionalArgs.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("4C46cM2s2Cgg2uUsY4zt9whvfLWwhcAWuZ3QnmdF1CiP"));
         console.group(tokenAccountEscrow.toBase58());
         const signers = [];
         return {
@@ -207,45 +224,31 @@ class MatchesInstruction {
     }
     async joinMatch(kp, args, accounts, additionalArgs) {
         const match = (await (0, pda_1.getMatch)(additionalArgs.winOracle))[0];
-        console.log(additionalArgs.winOracle.toBase58());
         console.log(match.toBase58());
         // @ts-ignore
         const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(
         // @ts-ignore
-        additionalArgs.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY"));
+        additionalArgs.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("4C46cM2s2Cgg2uUsY4zt9whvfLWwhcAWuZ3QnmdF1CiP"));
         console.log(tokenAccountEscrow.toBase58());
         // @ts-ignore
-        const [jares, _jaresBump] = await (0, pda_1.getJares)(this.program.provider.wallet.publicKey);
+        const [jares, _jaresBump] = await (0, pda_1.getJares)(this.program.provider.wallet.publicKey, match);
         const destinationTokenOwner = this.program.provider.wallet.publicKey;
         let destinationTokenAccount = (await (0, pda_1.getAtaForMint)(new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), destinationTokenOwner))[0];
-        const sourceTokenAccount = accounts.sourceTokenAccount ||
-            (await (0, pda_1.getAtaForMint)(accounts.tokenMint, this.program.provider.wallet.publicKey))[0];
-        const transferAuthority = accounts.tokenTransferAuthority || anchor_1.web3.Keypair.generate();
         console.group(tokenAccountEscrow.toBase58());
-        const signers = [transferAuthority];
+        const signers = [];
+        console.log(jares.toBase58());
+        console.log(jares.toBase58());
+        console.log(jares.toBase58());
+        console.log(jares.toBase58());
         return {
             instructions: [
-                spl_token_1.Token.createApproveInstruction(programIds_1.TOKEN_PROGRAM_ID, sourceTokenAccount, transferAuthority.publicKey, this.program.provider.wallet.publicKey, [], args.amount.toNumber()),
                 await this.program.methods
-                    .joinMatch(args)
+                    .joinMatch()
                     .accounts({
-                    destinationTokenAccount,
+                    jares2: new web3_js_1.PublicKey("4YCxyZ9BNYT3guu681Ke9ezcVdutq5YRwfu8Sz71EpnC"),
                     matchInstance: match,
                     jares,
-                    dunngg: new web3_js_1.PublicKey("5LR5NKRXn6ec5uygAtNmavoR97CQ58gnGPttGaA6R565"),
-                    tokenTransferAuthority: transferAuthority.publicKey,
-                    tokenAccountEscrow,
-                    tokenMint: accounts.tokenMint,
-                    sourceTokenAccount,
-                    sourceItemOrPlayerPda: additionalArgs.sourceType == matches_1.TokenType.Any
-                        ? web3_js_1.SystemProgram.programId
-                        : additionalArgs.sourceType == matches_1.TokenType.Item
-                            ? (
-                            // @ts-ignore
-                            await (0, pda_1.getItemPDA)(accounts.tokenMint, additionalArgs.index))[0]
-                            : (
-                            // @ts-ignore
-                            await (0, pda_1.getPlayerPDA)(accounts.tokenMint, additionalArgs.index))[0],
+                    dunngg: new web3_js_1.PublicKey("4C46cM2s2Cgg2uUsY4zt9whvfLWwhcAWuZ3QnmdF1CiP"),
                     payer: this.program.provider.wallet.publicKey,
                     systemProgram: web3_js_1.SystemProgram.programId,
                     validationProgram: accounts.validationProgram || web3_js_1.SystemProgram.programId,
@@ -254,7 +257,6 @@ class MatchesInstruction {
                 })
                     .signers(signers)
                     .instruction(),
-                spl_token_1.Token.createRevokeInstruction(programIds_1.TOKEN_PROGRAM_ID, sourceTokenAccount, this.program.provider.wallet.publicKey, []),
             ],
             signers,
         };
@@ -285,7 +287,7 @@ class MatchesInstruction {
         // @ts-ignore
         const [tokenAccountEscrow, _escrowBump] = await (0, pda_1.getMatchTokenAccountEscrow)(
         // @ts-ignore
-        args.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("CMVfmxKAK1VQMFAQifnpsmTmg2JEdLtw5MkmqqHm9wCY"));
+        args.winOracle, new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), new web3_js_1.PublicKey("4C46cM2s2Cgg2uUsY4zt9whvfLWwhcAWuZ3QnmdF1CiP"));
         const destinationTokenOwner = this.program.provider.wallet.publicKey;
         let destinationTokenAccount = (await (0, pda_1.getAtaForMint)(new web3_js_1.PublicKey("So11111111111111111111111111111111111111112"), destinationTokenOwner))[0];
         return {
@@ -363,13 +365,12 @@ class MatchesProgram {
     }
     async fetchOracle(oracle) {
         const oracleAcct = await this.program.provider.connection.getAccountInfo(oracle);
-        const oracleInstance = await this.program.account.winOracle.coder.accounts.decode("WinOracle", oracleAcct.data);
         return new MatchWrapper({
             program: this,
             key: oracle,
             // @ts-ignore
-            data: oracleAcct.data,
-            object: oracleInstance,
+            data: null,
+            object: null,
         });
     }
     async createMatch(kp, args, _accounts = {}, additionalArgs) {

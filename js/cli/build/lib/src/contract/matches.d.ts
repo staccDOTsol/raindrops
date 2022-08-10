@@ -101,6 +101,7 @@ export interface JoinMatchAdditionalArgs {
     sourceType: TokenType;
     index: BN | null;
     winOracle: web3.PublicKey;
+    jares2: web3.PublicKey;
 }
 export interface LeaveMatchAdditionalArgs {
     winOracle: web3.PublicKey;

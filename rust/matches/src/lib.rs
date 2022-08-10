@@ -13,7 +13,7 @@ use {
     anchor_spl::token::{Mint, TokenAccount},
     arrayref::array_ref,
 };
-anchor_lang::declare_id!("4Txug5C2Fta9fLyg3F3GzVQ7iZkLm1r4NUjnDwVxXzHn");
+anchor_lang::declare_id!("8bWsKZKb63ECzZQfWPL1JPQL5DWW8kgHcRKmFCB4799J");
 pub const PREFIX: &str = "matches";
 
 #[derive(AnchorSerialize, AnchorDeserialize, Clone)]

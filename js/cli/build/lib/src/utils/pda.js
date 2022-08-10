@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getEdition = exports.getMetadata = exports.getArtifactMintStakingAccount = exports.getArtifactIntermediaryStakingCounterForCooldown = exports.getArtifactIntermediaryStakingCounterForWarmup = exports.getArtifactIntermediaryStakingAccount = exports.getItemEscrow = exports.getCraftItemEscrow = exports.getCraftItemCounter = exports.getItemActivationMarker = exports.getPlayerPDA = exports.getItemPDA = exports.getNamespacePDA = exports.getOracle = exports.getJares = exports.getMatchTokenAccountEscrow = exports.getMatch = exports.getAtaForMint = void 0;
+exports.getEdition = exports.getMetadata = exports.getArtifactMintStakingAccount = exports.getArtifactIntermediaryStakingCounterForCooldown = exports.getArtifactIntermediaryStakingCounterForWarmup = exports.getArtifactIntermediaryStakingAccount = exports.getItemEscrow = exports.getCraftItemEscrow = exports.getCraftItemCounter = exports.getItemActivationMarker = exports.getPlayerPDA = exports.getItemPDA = exports.getNamespacePDA = exports.getOracle = exports.getJares2 = exports.getJares = exports.getMatchTokenAccountEscrow = exports.getMatch = exports.getAtaForMint = void 0;
 // @ts-nocheck
 const anchor_1 = require("@project-serum/anchor");
 const programIds_1 = require("../constants/programIds");
@@ -14,11 +14,16 @@ const getAtaForMint = async (mint, wallet) => {
 };
 exports.getAtaForMint = getAtaForMint;
 const getMatch = async (oracle) => {
-    return await [new anchor_1.web3.PublicKey("2gBHR6RezUwKGK6RYHLJxyHoYJg2LegsYoRvewVJ9nQq"), 0];
+    return await anchor_1.web3.PublicKey.findProgramAddress([Buffer.from(matches_1.PREFIX), oracle.toBuffer()], programIds_1.MATCHES_ID);
 };
 exports.getMatch = getMatch;
 const getMatchTokenAccountEscrow = async (oracle, tokenMint, tokenOwner) => {
-    return await [new anchor_1.web3.PublicKey("FrBNQdKzxVLA2kMCSJPmYPNAC4dLE38ri8F5MMu8a1i"), 0];
+    return await anchor_1.web3.PublicKey.findProgramAddress([
+        Buffer.from(matches_1.PREFIX),
+        oracle.toBuffer(),
+        tokenMint.toBuffer(),
+        tokenOwner.toBuffer(),
+    ], programIds_1.MATCHES_ID);
 };
 exports.getMatchTokenAccountEscrow = getMatchTokenAccountEscrow;
 const getJares = async (whoAmI) => {
@@ -28,6 +33,13 @@ const getJares = async (whoAmI) => {
     ], programIds_1.MATCHES_ID);
 };
 exports.getJares = getJares;
+const getJares2 = async (whoIsJare) => {
+    return await anchor_1.web3.PublicKey.findProgramAddress([
+        Buffer.from(matches_1.PREFIX),
+        whoIsJare.toBuffer()
+    ], programIds_1.MATCHES_ID);
+};
+exports.getJares2 = getJares2;
 const getOracle = async (seed, payer) => {
     return await anchor_1.web3.PublicKey.findProgramAddress([Buffer.from(matches_1.PREFIX), payer.toBuffer(), seed.toBuffer()], programIds_1.MATCHES_ID);
 };

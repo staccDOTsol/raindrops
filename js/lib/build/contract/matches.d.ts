@@ -89,8 +89,6 @@ export interface DisburseTokensByOracleAccounts {
 }
 export interface JoinMatchAccounts {
     tokenMint: web3.PublicKey;
-    sourceTokenAccount: web3.PublicKey | null;
-    tokenTransferAuthority: web3.Keypair | null;
     validationProgram: web3.PublicKey | null;
 }
 export interface LeaveMatchAccounts {
@@ -101,6 +99,7 @@ export interface JoinMatchAdditionalArgs {
     sourceType: TokenType;
     index: BN | null;
     winOracle: web3.PublicKey;
+    jares2: web3.PublicKey;
 }
 export interface LeaveMatchAdditionalArgs {
     winOracle: web3.PublicKey;
@@ -144,7 +143,7 @@ export declare class MatchesInstruction {
     }>;
     joinMatch(kp: any, args: JoinMatchArgs, accounts: JoinMatchAccounts, additionalArgs: JoinMatchAdditionalArgs): Promise<{
         instructions: web3.TransactionInstruction[];
-        signers: web3.Keypair[];
+        signers: any[];
     }>;
     updateMatchFromOracle(kp: Keypair, args: {}, accounts: UpdateMatchFromOracleAccounts, _additionalArgs?: {}): Promise<{
         instructions: web3.TransactionInstruction[];

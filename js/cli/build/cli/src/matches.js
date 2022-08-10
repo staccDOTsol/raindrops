@@ -153,6 +153,7 @@ programCommand("join_match")
                 ? new anchor_1.web3.PublicKey(setup.validationProgram)
                 : null,
         }, {
+            jares2: matchInstance.object.jares2,
             winOracle: config.winOracle
                 ? new anchor_1.web3.PublicKey(config.winOracle)
                 : (await PDA.getOracle(new anchor_1.web3.PublicKey(config.oracleState.seed), config.oracleState.authority
