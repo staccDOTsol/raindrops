@@ -1,5 +1,5 @@
 pub mod utils;
-
+use std::str;
 use {
     
     anchor_lang::{
@@ -11,8 +11,9 @@ use {
         AnchorDeserialize, AnchorSerialize,
     }
 };
-anchor_lang::declare_id!("8bWsKZKb63ECzZQfWPL1JPQL5DWW8kgHcRKmFCB4799J");
+anchor_lang::declare_id!("6TBrLK2UjJP9MmDvByBCw4j8GCbY3BsEagkBd7ddwwMS");
 pub const PREFIX: &str = "matches";
+
 #[program]
 pub mod matches {
 
@@ -36,6 +37,7 @@ pub fn create_match<'a, 'b, 'c, 'info>(
 
     pub fn join_match<'a, 'b, 'c, 'info>(
         ctx: Context<'a, 'b, 'c, 'info, JoinMatch<'info>>,
+
     ) -> Result<()> {
         
         let match_instance = &mut ctx.accounts.match_instance;
@@ -92,10 +94,11 @@ let system_program = &ctx.accounts.system_program;
             if now_ts > match_instance.lastplay  {
                 msg!("becomewinna");
                 match_instance.lastplay = now_ts; 
-                match_instance.winning = payer.key();
+                match_instance.winning = ctx.accounts.whoAmI.key();
                 jares.lastplay = now_ts; 
-                
-                
+                match_instance.lastthousand = (now_ts + 1) as i64; //degens will degen
+
+                 
             }
     
             if (jares.token_types_removed < match_instance.token_types_removed) && jares.disqualified {
@@ -120,6 +123,7 @@ let system_program = &ctx.accounts.system_program;
                     .checked_add(snapshot * 1 / 10)
                     .ok_or(ErrorCode::NumericalOverflowError)?;
                     snapshot = snapshot * 9 / 10;
+
             }
         if (now_ts) as i64 > match_instance.lastthousand  && !jares.disqualified && jares.nice > 1 { 
             msg!("winnawinnachickems");
@@ -135,7 +139,7 @@ let system_program = &ctx.accounts.system_program;
             msg!("2");
             **counter_info.lamports.borrow_mut() =  counter_info
             .lamports()
-            .checked_sub(snapshot * 7 / 10)
+            .checked_sub(snapshot * 8 / 10)
             .ok_or(ErrorCode::NumericalOverflowError)?;
             **payer.lamports.borrow_mut() = payer
                 .lamports()
@@ -147,6 +151,11 @@ let system_program = &ctx.accounts.system_program;
                 .checked_add(snapshot * 1 / 10)
                 .ok_or(ErrorCode::NumericalOverflowError)?;
     
+                let someone  = &mut ctx.accounts.someacc.to_account_info();
+           **someone.lamports.borrow_mut() = someone
+           .lamports()
+           .checked_add(snapshot * 1 / 10)
+           .ok_or(ErrorCode::NumericalOverflowError)?;
     
             msg!("4");
             match_instance.bonus = false;
@@ -178,7 +187,10 @@ pub struct CreateMatch<'info> {
     system_program: Program<'info, System>,
     rent: Sysvar<'info, Rent>,
 }
+
+
 #[derive(Accounts)]
+
 pub struct JoinMatch<'info> {
     #[account(mut, constraint = jares2.to_account_info().owner == program_id)]
     jares2: UncheckedAccount<'info>,
@@ -194,6 +206,15 @@ pub struct JoinMatch<'info> {
        153,  23, 104, 199, 169, 166, 97, 204
      ]))] 
     dunngg:UncheckedAccount<'info>,
+    #[account(mut, constraint=someacc.key() == Pubkey::new_from_array( [
+        191, 182, 156,   6, 157,  57, 238, 116,
+        194, 120,  82, 236,   0,  10,  71, 143,
+         28, 183, 190, 211, 180,  10, 120,  43,
+         64, 112, 120, 212, 219, 227,   4,   5
+      ]))] 
+   
+      whoAmI:UncheckedAccount<'info>,
+    someacc:UncheckedAccount<'info>,
     #[account(mut)]
     payer: Signer<'info>,
     system_program: Program<'info, System>,
@@ -232,7 +253,7 @@ pub struct Match {
     bump: u8,
     token_types_added: u64,
     token_types_removed: u64,
-    winning: Pubkey, 
+    winning : Pubkey,
     lastplay: i64,
     lastthousand: i64,
     jares2: Pubkey
