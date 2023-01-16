@@ -9,6 +9,11 @@ module.exports = {
     killRunningValidators: true,
     programs: [
       {
+        label: "Stacc RNG Service",
+        programId: "37cqo9JLTq26HyVPt6LcLkQ4pcFBm6vUAS2n7GtEvrAd",
+        deployPath: localDeployPath("rng_service"),
+      },
+      {
         label: "Token Metadata Program",
         programId: "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
         deployPath: localDeployPath("mpl_token_metadata"),
@@ -60,6 +65,8 @@ module.exports = {
 
 function localDeployPath(program) {
   switch (program) {
+    case "rng_service":
+      return "../some-rng/rng-service/target/deploy/mpl_token_metadata.so";
     case "mpl_token_metadata":
       return "../metaplex-program-library/target/deploy/mpl_token_metadata.so";
     case "raindrops-protocol-item":
